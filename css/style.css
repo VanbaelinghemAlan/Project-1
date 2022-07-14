@@ -16,11 +16,6 @@
     /* Special colors */
     --transparent-white: rgba(255, 255, 255, 0.5);
 
-    /* Social colors */
-    --facebook-color: #3b5998;
-    --twitter-color: #55acee;
-    --instagram-color: #ac2bac;
-
     /* Transistion */
     --transition-duration: .5s;
     --transition-function: ease;
