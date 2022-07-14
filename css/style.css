@@ -1,0 +1,132 @@
+@import url(font-awesome.min.css);
+
+:root {
+    /* Sizes */
+    font-size: 14px;
+    --container-width: 1350px;
+
+    /* Colors */
+    --primary-color: #fb9179;
+    --secondary-color: #bdbf09;
+    --main-bg: #151617;
+    --dark-grey: #313335;
+    --dark-grey-transparent: rgba(49, 51, 53, 0.7);
+    --light-grey: #7a8085;
+
+    /* Special colors */
+    --transparent-white: rgba(255, 255, 255, 0.5);
+
+    /* Social colors */
+    --facebook-color: #3b5998;
+    --twitter-color: #55acee;
+    --instagram-color: #ac2bac;
+
+    /* Transistion */
+    --transition-duration: .5s;
+    --transition-function: ease;
+}
+
+
+/* NORMALIZER */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.template-dark.disable {
+    overflow:hidden;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    border: none;
+    background: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+
+/* UTILITIES */
+
+body.template-dark {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+    background-color: var(--main-bg);
+}
+
+.container {
+    margin: 0 auto;
+    max-width: var(--container-width);
+}
+
+.section {
+    margin-bottom: 7rem;
+}
+/*HEADER ZONE*/
+
+.header{}
+.containerHeader{}
+
+/*FIRST ZONE*/
+
+.firstInfo{}
+.lastName{}
+.firstName{}
+.lvl{}
+.imgCharacter{}
+.race{}
+.classe{}
+.xp{}
+
+/*SECOND ZONE*/
+
+.secondInfo{}
+.faith{}
+.birthday{}
+
+/*ATTRIBUTE AND STATUS*/
+
+.attribute{}
+.vitality{}
+.vitalityTotal{}
+
+
+.defMelee{}
+.defMeleeTotal{}
+.defRange{}
+.defRangeTotal{}
+.energie{}
+.energieTotal{}
+.detection{}
+.detectionTotal{}
+.symbiosis{}
+.symbiosisTotal{}
