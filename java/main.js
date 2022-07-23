@@ -36,6 +36,10 @@ characteristic.addEventListener("click",getTheFirstDice)
 
 function getTheFirstDice(event) {
     (document.getElementById("firstDice")).value = event.target.textContent
+    this.removeEventListener("click",getTheFirstDice)
+    characteristic.addEventListener("click",getTheSecondDice)
+   }
 
-}
-console.log(strenghtBtn);
+function getTheSecondDice(event) {
+    (document.getElementById("secondDice")).value = event.target.textContent 
+    }
