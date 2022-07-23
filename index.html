@@ -12,14 +12,66 @@
     <header class="header" id="header">
         <div class="containerHeader" id="containerHeader">
             <div class=firstInfo>
-                    <div class="lastName" id="lastName" input="text">Nom</div>
-                    <div class="firstName" id="firstName" input="text">Prénom</div>
+                    <div class="lastName" id="lastName" input="text">
+                        <label for="lastName">Nom :</label>
+                        <input type="text" id="lastNameIn">
+                    </div>
+
+                    <div class="firstName" id="firstName" input="text">
+                        <label for="firstName" id="firstName" input="text">Prénom :</label>
+                        <input type="text" id="firstNameIn">
+                    </div>
+
                     <div class="lvl" id="lvl">1</div>
+
+
                     <img  class="imgCharacter" id="imgCharacter"src="/img/characterP.jpg" alt="characterImg">
-                    <div class="race" id="race" input="text">Humain</div>
-                    <div class="classe" id="classe" input="text">Chevalier</div>
+
+
+                    <div class="race" id="race">
+                        <label for="race" id="labelrace" input="text">Race :</label>
+                        <select class="race" name="option">
+                            <option value="" disabled selected>Choisissez votre Race</option>
+                            <option value="0">Aucune</option>
+                            <option value="1">Race 1</option>
+                            <option value="2">Race 2</option>
+                            <option value="3">Race 3</option>
+                        </select>
+                    </div>
+
+                    <div class="classe" id="classe">
+                        <label for="classe" id="labelclasse" input="text">Classe primaire :</label>
+                        <select class="classe" name="option">
+                            <option value="" disabled selected>Choisissez votre première classe</option>
+                            <option value="0">Aucune</option>
+                            <option value="1">1er classe</option>
+                            <option value="2">2eme classe</option>
+                            <option value="3">3eme classe</option>
+                        </select><br>
+
+                        <label for="classe" id="labelclasse" input="text">Classe secondaire :</label>
+                        <select class="classe" name="option">
+                            <option value="" disabled selected>Choisissez votre seconde classe</option>
+                            <option value="0">Aucune</option>
+                            <option value="1">1er classe</option>
+                            <option value="2">2eme classe</option>
+                            <option value="3">3eme classe</option>
+                        </select>
+                    </div>
+
                     <input  class="xp" id="xp" input="text" value="0">
-                    <div class="faith" id="faith" input="text">toto</div>
+
+                    <div class="faith" id="faith">
+                        <label for="faith" id="faith" input="text">Allégeance :</label>
+                        <select class="faith" name="option">
+                            <option value="" disabled selected>Choisissez une divinité</option>
+                            <option value="0">Aucun</option>
+                            <option value="1">Dieu 1</option>
+                            <option value="2">Dieu 2</option>
+                            <option value="3">Dieu 3</option>
+                        </select>
+                    </div>
+
                     <div class="birthday" id="birthday" input="text">1 septembre 1975</div>
                     <div class="vitality" id="vitality">Vitalité</div>
                     <input  class="vitalityTotal tT" id="vitalityTotal" value="0" disabled>
