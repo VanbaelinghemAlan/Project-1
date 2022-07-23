@@ -255,6 +255,12 @@ body.template-dark {
     font-size: 2rem;
 }
 
+.characteristic button{
+    width: 100px;
+    padding-right: 194px;
+    background-color: #bdbf09;
+    font-size: 1.8rem;
+}
 .carac{
     width: 100px;
     padding-right: 200px;

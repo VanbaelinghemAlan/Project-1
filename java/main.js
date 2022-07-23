@@ -6,7 +6,9 @@ const characteristic = document.getElementById("characteristic")
     const adList = document.getElementsByClassName("adNb")
     const caractTl = document.getElementsByClassName("tT")
 
-        const StrenghtA = document.getElementById("strenght")
+        const strenghtBtn = document.getElementById("strenght")
+
+const firstDice = document.getElementById("firstDice")
 
 
         console.log(typeof document.getElementById("symbiosisTotal").value);
@@ -27,10 +29,11 @@ console.log((calcStrenght));
 document.getElementById("totalStrenght").value = calcStrenght
 //changer la valeur html grâce au bouton, ne change pas le total
 
+//click on the stat to get the dice 
 
-characteristic.addEventListener("click",getTheFirstDice);
-console.log(getTheFirstDice);
+strenghtBtn.addEventListener("click",getTheFirstDice)
 
-function getTheFirstDice(params) {
-    document.getElementById("firstDice") == this
+function getTheFirstDice(event) {
+    (document.getElementById("firstDice")).value = event.target.textContent
 }
+console.log(strenghtBtn);
