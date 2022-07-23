@@ -261,7 +261,7 @@ body.template-dark {
     background-color: #bdbf09;
 }
 
-.nB{
+.nB, .adNb{
     width: 50px;
     text-align: right;
     justify-content: center;
