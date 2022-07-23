@@ -31,9 +31,11 @@ document.getElementById("totalStrenght").value = calcStrenght
 
 //click on the stat to get the dice 
 
-strenghtBtn.addEventListener("click",getTheFirstDice)
+// strenghtBtn.addEventListener("click",getTheFirstDice)
+characteristic.addEventListener("click",getTheFirstDice)
 
 function getTheFirstDice(event) {
     (document.getElementById("firstDice")).value = event.target.textContent
+
 }
 console.log(strenghtBtn);
