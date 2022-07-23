@@ -12,34 +12,130 @@
     <header class="header" id="header">
         <div class="containerHeader" id="containerHeader">
             <div class=firstInfo>
-                <div class="lastName" id="lastName" input="text">Nom</div>
-                <div class="firstName" id="firstName" input="text">Prénom</div>
-                <div class="lvl" id="lvl">1</div>
-                <div class="imgCharacter" id="imgCharacter" src="" alt="characterImg"></div>
-                <div class="race" id="race" input="text">Humain</div>
-                <div class="classe" id="classe" input="text">Chevalier</div>
-                    <div class="xp" id="xp" input="text">0</div>
-            </div>
-            <div class=secondInfo>
+                    <div class="lastName" id="lastName" input="text">Nom</div>
+                    <div class="firstName" id="firstName" input="text">Prénom</div>
+                    <div class="lvl" id="lvl">1</div>
+                    <img  class="imgCharacter" id="imgCharacter"src="/img/characterP.jpg" alt="characterImg">
+                    <div class="race" id="race" input="text">Humain</div>
+                    <div class="classe" id="classe" input="text">Chevalier</div>
+                    <input  class="xp" id="xp" input="text" value="0">
                     <div class="faith" id="faith" input="text">toto</div>
                     <div class="birthday" id="birthday" input="text">1 septembre 1975</div>
-            </div>
-            <div class=attribute>
                     <div class="vitality" id="vitality">Vitalité</div>
-                    <div class="vitalityTotal" id="vitalityTotal" value="0"></div>
+                    <input  class="vitalityTotal tT" id="vitalityTotal" value="0" disabled>
                     <div class="defMelee" id="defMelee">Def Melée</div>
-                    <div class="defMeleeTotal" id="defMeleeTotal" value="0"></div>
+                    <input  class="defMeleeTotal tT" id="defMeleeTotal" value="0" disabled>
                     <div class="defRange" id="defRange">Def Distance</div>
-                    <div class="defRangeTotal" id="defRangeTotal" value="0"></div>
+                    <input  class="defRangeTotal tT" id="defRangeTotal" value="0" disabled>
                     <div class="energie" id="energie">Energie</div>
-                    <div class="energieTotal" id="energieTotal" value="0"></div>
+                    <input  class="energieTotal tT" id="energieTotal" value="0" disabled>
                     <div class="detection" id="detection">Détection</div>
-                    <div class="detectionTotal" id="detectionTotal" value="0"></div>
+                    <input  class="detectionTotal tT" id="detectionTotal" value="0" disabled>
                     <div class="symbiosis" id="symbiosis">Symbiose</div>
-                    <div class="symbiosisTotal" id="symbiosisTotal" value="0"></div>
-             </div>   
+                    <input  class="symbiosisTotal tT" id="symbiosisTotal" value="0" disabled>
+            </div>
         </div>
     </header>
-    <script type="text/javascript" src="/css/javascript/main.js"></script>
+          <div class="mainContent" id="mainContent">
+                <ul class="characteristic" id="characteristic">
+                    <li class="strenghtList" id="strenghtList">
+                    <div class="strenght carac" id="strenght">Force</div>
+                    <input class="baseStrenght nB" id="baseStrenght" value="3" type="number" min="1" max="15">
+                    <input class="adStrenght nB" id="adStrenght" value="0" type="number" min="0" max="15">
+                    <input class="totalStrenght nB tT" id="totalStrenght" value="0" disabled>
+                    </li>
+
+                    <li class="staminaList" id="staminaList">
+                    <div class="stamina carac" id="stamina">Endurance</div>
+                    <input class="baseStamina nB" id="baseStamina" value="3" type="number" min="1" max="15">
+                    <input class="adStamina nB" id="adStamina" value="0" type="number" min="0" max="15">
+                    <input class="totalStamina nB tT" id="totalStamina" value="0" disabled>
+                    </li>
+
+                    <li class="agilityList" id="agilityList">
+                    <div class="agility carac" id="agility">Agilité</div>
+                    <input class="baseAgility nB" id="baseAgility" value="3" type="number" min="1" max="15">
+                    <input class="adAgility nB" id="adAgility" value="0" type="number" min="0" max="15">
+                    <input class="totalAgility nB tT" id="totalAgility" value="0" disabled>
+                    </li>
+
+                    <li class="instinctList" id="instincttList">
+                    <div class="instinct carac" id="instinct">Intuition</div>
+                    <input class="baseInstinct nB" id="baseInstinct" value="3" type="number" min="1" max="15">
+                    <input class="adInstinct nB" id="adInstinct" value="0" type="number" min="0" max="15">
+                    <input class="totalInstinct nB tT" id="totalInstinct" value="0" disabled>
+                    </li>
+
+                    <li class="speedList" id="speedList">
+                    <div class="speed carac" id="speed">Rapidité</div>
+                    <input class="baseSpeed nB" id="baseSpeed" value="3" type="number" min="1" max="15">
+                    <input class="adSpeed nB" id="adSpeed" value="0" type="number" min="0" max="15">
+                    <input class="totalSpeed nB tT" id="totalSpeed" value="0" disabled>
+                    </li>
+
+                    <li class="reflexList" id="reflexList">
+                    <div class="reflex carac" id="reflex">Réactivité</div>
+                    <input class="baseReflex nB" id="baseReflex" value="3" type="number" min="1" max="15">
+                    <input class="adReflex nB" id="adReflex" value="0" type="number" min="0" max="15">
+                    <input class="totalReflex nB tT" id="totalReflex" value="0" disabled>
+                    </li>
+
+                    <li class="perceptionList" id="perceptionList">
+                    <div class="perception carac" id="perception">Perception</div>
+                    <input class="basePerception nB" id="basePerception" value="3" type="number" min="1" max="15">
+                    <input class="adPerception nB" id="adPerception" value="0" type="number" min="0" max="15">
+                    <input class="totalPerception nB tT" id="totalPerception" value="0" disabled>
+                    </li>
+
+                    <li class="stealthList" id="stealthList">
+                    <div class="stealth carac" id="stealth">Furtivité</div>
+                    <input class="baseStealth nB" id="baseStealth" value="3" type="number" min="1" max="15">
+                    <input class="adStealth nB" id="adStealth" value="0" type="number" min="0" max="15">
+                    <input class="totalStealth nB tT" id="totalStealth" value="0" disabled>
+                    </li> 
+                    
+                    <li class="willList" id="willList">
+                    <div class="will carac" id="will">Volonté</div>
+                    <input class="baseWill nB" id="baseWill" value="3" type="number" min="1" max="15">
+                    <input class="adWill nB" id="adWill" value="0" type="number" min="0" max="15">
+                    <input class="totalWill nB tT" id="totalWill" value="0" disabled>
+                    </li>
+
+                    <li class="charismaList" id="charismaList">
+                    <div class="charisma carac" id="charisma">Charisme</div>
+                    <input class="baseCharisma nB" id="baseCharisma" value="3" type="number" min="1" max="15">
+                    <input class="adCharisma nB" id="adCharisma" value="0" type="number" min="0" max="15">
+                    <input class="totalCharisma nB tT" id="totalCharisma" value="0" disabled>
+                    </li>
+                </ul>
+                <div class="secondContent" id="secondContent">
+                    <div class="diceSection" id="diceSection">
+                        <div class="the3" id="the3">
+                            <img class="sunButton" id="sunButton" src="/img/button.png" alt="Sun">
+                            <img class="lunaButton" id="lunaButton" src="/img/button.png" alt="Luna">
+                            <img class="ameButton" id="ameButton" src="/img/button.png" alt="Amezyne">
+                        </div>
+                        <div class="position" id="position">
+                            <img class="offPos" id="offPos" src="/img/button2.png" alt="OffPos">
+                            <img class="defPos" id="defPos" src="/img/button2.png" alt="DefPos">
+                            <img class="covPos" id="covPos" src="/img/button2.png" alt="CovPos">
+                            <img class="aggPos" id="aggPos" src="/img/button2.png" alt="AggPos">  <!-- Aggro,  --> 
+                            <img class="comPos" id="comPos" src="/img/button2.png" alt="ComPos"> <!--combo-->
+                            <img class="techPos" id="techPos" src="/img/button2.png" alt="TechPos"> <!--technique-->
+                        </div>
+                        <div class="diceZone" id="diceZone">
+                            <input type="text" class="textPos" id="textPos" disabled value="Posture de combat">
+                            <input type="text" class="firstDice" id="firstDice" disabled value=""><br>
+                            <input type="text" class="secondDice" id="secondDice" disabled value="">
+                            <img class="diceButton" id="diceButton" src="/img/dice.png" alt="dice">
+                            <input type="text" class="thirdDice" id="thirdDice" disabled value=""><br>
+                            <input type="text" class="fourthDice" id="fourthDice" disabled value="">
+                            <input type="text" class="effectDice" id="effectDice" disabled value="Sans effect">
+                        </div>
+                    </div>
+                </div>
+         </div>
+     </div>
+    <script type="text/javascript" src="/java/main.js"></script>
 </body>
 </html>
