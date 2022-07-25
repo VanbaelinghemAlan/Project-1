@@ -11,6 +11,8 @@ const characteristic = document.getElementById("characteristic")
 const firstDice = document.getElementById("firstDice")
 const secondDice = document.getElementById("secondDice")
 const thirdDice = document.getElementById("thirdDice")
+const fourthDice = document.getElementById("fourthDice")
+
 const effectDice = document.getElementById("effectDice")
 const plusBtn = document.getElementById("plusBtn")
 const minusBtn = document.getElementById("minusBtn")
@@ -70,6 +72,9 @@ minusBtn.addEventListener("click",removeAnotherCarac)
 
 function getAnotherCarac(event) {
     thirdDice.classList.add("active")
+    if (thirdDice.classList.contains("active"))
+        fourthDice.classList.add("active")
+        console.log((thirdDice.classList.contains("active")));
 }
 
 function removeAnotherCarac(event) {
