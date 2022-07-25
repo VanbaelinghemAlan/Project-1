@@ -69,16 +69,24 @@ function getTheSecondDice(event) {
 plusBtn.addEventListener("click",getAnotherCarac)
 minusBtn.addEventListener("click",removeAnotherCarac)
 
+let tutu = 0
 
 function getAnotherCarac(event) {
     thirdDice.classList.add("active")
-    if (thirdDice.classList.contains("active"))
+    tutu++
+    if (tutu >= 2)
         fourthDice.classList.add("active")
         console.log((thirdDice.classList.contains("active")));
+        console.log(tutu);
 }
 
 function removeAnotherCarac(event) {
+    fourthDice.classList.remove("active")
+    tutu--
+    if (tutu < 1)
     thirdDice.classList.remove("active")
+    // plusBtn.removeEventListener("click",getAnotherCarac)
+    console.log(tutu);
     
 }
 
