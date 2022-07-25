@@ -17,6 +17,17 @@ const effectDice = document.getElementById("effectDice")
 const plusBtn = document.getElementById("plusBtn")
 const minusBtn = document.getElementById("minusBtn")
 
+const strenght = document.getElementById("strenght")
+const stamina = document.getElementById("stamina")
+const agility = document.getElementById("agility")
+const intuition = document.getElementById("intuition")
+const speed = document.getElementById("speed")
+const reflex = document.getElementById("reflex")
+const perception = document.getElementById("perception")
+const stealth = document.getElementById("stealth")
+const will = document.getElementById("will")
+const charisma = document.getElementById("charisma")
+
 const strenghtEffect = "Vous obtenez +10 à vos dégâts !"
 const staminaEffect = "Réduit les prochains dégâts de 10 !"
 const agilityEffect = "Vous obtenez +1 Avantage sur votre jet"
@@ -51,12 +62,17 @@ document.getElementById("totalStrenght").value = calcStrenght
 
 //Définir les caractéristiques dans le jet de dès
 characteristic.addEventListener("click",getTheFirstDice)
-characteristic.addEventListener("click",removeTheFirstDice)
+// characteristic.addEventListener("click",removeTheFirstDice)
 
+let onOff = 0
 
 function getTheFirstDice(event) {
     (document.getElementById("firstDice")).value = event.target.textContent
     event.target.classList.add("selected")
+    onOff++
+     if (onOff > 1) event.target.classList.remove("selected") 
+        if (onOff >1) onOff = 0
+     console.log(onOff);
 }
 
 // function removeTheFirstDice(event) {
