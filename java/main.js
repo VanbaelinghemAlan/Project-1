@@ -47,7 +47,6 @@ console.log((calcStrenght));
 document.getElementById("totalStrenght").value = calcStrenght
 //changer la valeur html grâce au bouton, ne change pas le total
 //intégrer les LI dans une boucle
-
 // ----------------------------------------------------------------------------------------------
 
 //Définir les caractéristiques dans le jet de dès
@@ -65,43 +64,35 @@ function getTheSecondDice(event) {
     (document.getElementById("secondDice")).value = event.target.textContent 
     }
 
+//----------------------------------------------------------------------
 //Ajouter et retirer des caractéristiques pour le jet de dès
 plusBtn.addEventListener("click",getAnotherCarac)
 minusBtn.addEventListener("click",removeAnotherCarac)
 
-let tutu = 0
+let theLastDice = 0
 
 function getAnotherCarac(event) {
     thirdDice.classList.add("active")
-    tutu++
-    if (tutu >= 2)
-        fourthDice.classList.add("active")
-        if(tutu >2) tutu = 2
-        console.log((thirdDice.classList.contains("active")));
-        console.log(tutu);
+    theLastDice ++
+    if (theLastDice  >= 2)
+    fourthDice.classList.add("active")
+    if(theLastDice  >2) theLastDice  = 2
 }
 
 function removeAnotherCarac(event) {
     fourthDice.classList.remove("active")
-    tutu--
-    if (tutu < 1)
+    theLastDice --
+    if (theLastDice  < 1)
     thirdDice.classList.remove("active")
-    if(tutu <0) tutu = 0
-    // plusBtn.removeEventListener("click",getAnotherCarac)
-    console.log(tutu);
+    if(theLastDice  <0) theLastDice  = 0
     
 }
-
-
-function getTheBonusEffet() {
-//    if (secondDice.value  === ""){effectDice.value = "Sans effet"}a faire plus tard.
-       
-}
-strenghtBtn.addEventListener("click",getTheBonusEffet)
+//-------------------------------------------------------------------
 
 
 
-  
+
+
 // (secondDice.value  == "Force"){effectDice.value = strenghtEffect}
 // (secondDice.value  == "Endurance") {effectDice.value = staminaEffect}
 // (secondDice.value  == "Agilité") {effectDice.value = agilityEffect}
