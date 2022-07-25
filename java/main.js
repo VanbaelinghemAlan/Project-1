@@ -41,6 +41,14 @@ console.log((calcStrenght));
 
 document.getElementById("totalStrenght").value = calcStrenght
 //changer la valeur html grâce au bouton, ne change pas le total
+
+
+
+
+
+
+
+
 //intégrer les LI dans une boucle
 
 //Définir les caractéristiques dans le jet de dès
@@ -57,16 +65,30 @@ function getTheSecondDice(event) {
     (document.getElementById("secondDice")).value = event.target.textContent 
     }
 
+function getTheThirdDice(event) {
+     (document.getElementById("thirdDice")).value = event.target.textContent     
+}
+
 //Ajouter les buttons + et - après
 
 //Indiquez les effets suites au dernier jet selectionné (pour l'instant j'me contente du second)
 
 function getTheBonusEffet() {
-    if (secondDice.value  == "Force"){
-        effectDice.value = strenghtEffect}
-        else (secondDice.value  == "Endurance")
-            effectDice.value = staminaEffect
-        }
-
+//    if (secondDice.value  === ""){effectDice.value = "Sans effet"}
+       
+}
 strenghtBtn.addEventListener("click",getTheBonusEffet)
-//fonctionne pô
+
+
+
+//fonctionne pô    
+// (secondDice.value  == "Force"){effectDice.value = strenghtEffect}
+// (secondDice.value  == "Endurance") {effectDice.value = staminaEffect}
+// (secondDice.value  == "Agilité") {effectDice.value = agilityEffect}
+// (secondDice.value  == "Intuition") {effectDice.value = intuitionEffect}
+// (secondDice.value  == "Rapidité") {effectDice.value = speedEffect}
+// (secondDice.value  == "Réactivité") {effectDice.value = reflexEffect}
+// (secondDice.value  == "Perception") {effectDice.value = perceptionEffect}
+// (secondDice.value  == "Furtivité") {effectDice.value = stealthEffect}
+// (secondDice.value  == "Volonté") {effectDice.value = willEffect}
+// (secondDice.value  == "Charisme") {effectDice.value = charismaEffect} 
