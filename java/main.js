@@ -76,6 +76,7 @@ function getAnotherCarac(event) {
     tutu++
     if (tutu >= 2)
         fourthDice.classList.add("active")
+        if(tutu >2) tutu = 2
         console.log((thirdDice.classList.contains("active")));
         console.log(tutu);
 }
@@ -85,6 +86,7 @@ function removeAnotherCarac(event) {
     tutu--
     if (tutu < 1)
     thirdDice.classList.remove("active")
+    if(tutu <0) tutu = 0
     // plusBtn.removeEventListener("click",getAnotherCarac)
     console.log(tutu);
     
