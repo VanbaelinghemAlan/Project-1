@@ -63,6 +63,8 @@ document.getElementById("totalStrenght").value = calcStrenght
 //Définir les caractéristiques dans le jet de dès
 characteristic.addEventListener("click",getTheFirstDice)
 characteristic.addEventListener("click",removeTheSameDice)
+characteristic.addEventListener("click",getTheSecondDice)
+
 
 
 function getTheFirstDice(event) {
@@ -72,7 +74,7 @@ function getTheFirstDice(event) {
 }
 
 function getTheSecondDice(event) {
-    if ((document.getElementById("firstDice")).value !== "" )
+    if (firstDice.value != "" )
      (document.getElementById("secondDice")).value = event.target.textContent 
 }
 
