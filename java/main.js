@@ -51,19 +51,30 @@ document.getElementById("totalStrenght").value = calcStrenght
 
 //Définir les caractéristiques dans le jet de dès
 characteristic.addEventListener("click",getTheFirstDice)
+characteristic.addEventListener("click",removeTheFirstDice)
 
 
 function getTheFirstDice(event) {
     (document.getElementById("firstDice")).value = event.target.textContent
-    this.removeEventListener("click",getTheFirstDice)
-    characteristic.addEventListener("click",getTheSecondDice)
-    getTheBonusEffet
-   }
+    event.target.classList.add("selected")
+}
+
+// function removeTheFirstDice(event) {
+//     if (event.target.classList.contains("selected"))
+//     event.target.classList.remove("selected")
+// }
 
 function getTheSecondDice(event) {
     (document.getElementById("secondDice")).value = event.target.textContent 
-    }
+}
 
+function getTheThirdDice(event) {
+  (document.getElementById("thirdDice")).value = event.target.textContent 
+}
+
+function getTheFourthDice(event) {
+   (document.getElementById("fourthDice")).value = event.target.textContent 
+}
 //----------------------------------------------------------------------
 //Ajouter et retirer des caractéristiques pour le jet de dès
 plusBtn.addEventListener("click",getAnotherCarac)

@@ -267,6 +267,10 @@ body.template-dark {
     background-color: #bdbf09;
 }
 
+.selected{
+    color: #313335;
+}
+
 .nB, .adNb, .tT, .attTt{
     width: 50px;
     text-align: right;
