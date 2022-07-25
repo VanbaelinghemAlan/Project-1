@@ -58,6 +58,10 @@ function getTheFirstDice(event) {
     (document.getElementById("firstDice")).value = event.target.textContent
     this.removeEventListener("click",getTheFirstDice)
     characteristic.addEventListener("click",getTheSecondDice)
+    this.removeEventListener("click",getTheSecondDice)
+    characteristic.addEventListener("click",getTheThirdDice)
+    this.removeEventListener("click",getTheThirdDice)
+    characteristic.addEventListener("click",getTheFourthDice)
     getTheBonusEffet
    }
 
@@ -68,6 +72,11 @@ function getTheSecondDice(event) {
 function getTheThirdDice(event) {
      (document.getElementById("thirdDice")).value = event.target.textContent     
 }
+
+function getTheFourthDice(event) {
+    (document.getElementById("fourthDice")).value = event.target.textContent     
+}
+
 
 //Ajouter les buttons + et - après
 

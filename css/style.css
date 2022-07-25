@@ -339,3 +339,7 @@ body.template-dark {
     grid-row: 4;
     width: 470px;
 }
+
+.plusBtn, .minusBtn{
+    width: 30px;
+}
