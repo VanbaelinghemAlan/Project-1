@@ -327,10 +327,16 @@ body.template-dark {
 }
 
 .thirdDice{
+    display: none;
     grid-column: 1;
     grid-row: 3;
 }
+.active{
+    display:grid;
+}
+
 .fourthDice{
+    display: none;
     grid-column: 3;
     grid-row: 3;
 }

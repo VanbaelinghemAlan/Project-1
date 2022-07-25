@@ -10,7 +10,10 @@ const characteristic = document.getElementById("characteristic")
 
 const firstDice = document.getElementById("firstDice")
 const secondDice = document.getElementById("secondDice")
+const thirdDice = document.getElementById("thirdDice")
 const effectDice = document.getElementById("effectDice")
+const plusBtn = document.getElementById("plusBtn")
+const minusBtn = document.getElementById("minusBtn")
 
 const strenghtEffect = "Vous obtenez +10 à vos dégâts !"
 const staminaEffect = "Réduit les prochains dégâts de 10 !"
@@ -41,27 +44,18 @@ console.log((calcStrenght));
 
 document.getElementById("totalStrenght").value = calcStrenght
 //changer la valeur html grâce au bouton, ne change pas le total
-
-
-
-
-
-
-
-
 //intégrer les LI dans une boucle
+
+// ----------------------------------------------------------------------------------------------
 
 //Définir les caractéristiques dans le jet de dès
 characteristic.addEventListener("click",getTheFirstDice)
+
 
 function getTheFirstDice(event) {
     (document.getElementById("firstDice")).value = event.target.textContent
     this.removeEventListener("click",getTheFirstDice)
     characteristic.addEventListener("click",getTheSecondDice)
-    this.removeEventListener("click",getTheSecondDice)
-    characteristic.addEventListener("click",getTheThirdDice)
-    this.removeEventListener("click",getTheThirdDice)
-    characteristic.addEventListener("click",getTheFourthDice)
     getTheBonusEffet
    }
 
@@ -69,28 +63,30 @@ function getTheSecondDice(event) {
     (document.getElementById("secondDice")).value = event.target.textContent 
     }
 
-function getTheThirdDice(event) {
-     (document.getElementById("thirdDice")).value = event.target.textContent     
+//Ajouter et retirer des caractéristiques pour le jet de dès
+plusBtn.addEventListener("click",getAnotherCarac)
+minusBtn.addEventListener("click",removeAnotherCarac)
+
+
+function getAnotherCarac(event) {
+    thirdDice.classList.add("active")
 }
 
-function getTheFourthDice(event) {
-    (document.getElementById("fourthDice")).value = event.target.textContent     
+function removeAnotherCarac(event) {
+    thirdDice.classList.remove("active")
+    
 }
 
-
-//Ajouter les buttons + et - après
-
-//Indiquez les effets suites au dernier jet selectionné (pour l'instant j'me contente du second)
 
 function getTheBonusEffet() {
-//    if (secondDice.value  === ""){effectDice.value = "Sans effet"}
+//    if (secondDice.value  === ""){effectDice.value = "Sans effet"}a faire plus tard.
        
 }
 strenghtBtn.addEventListener("click",getTheBonusEffet)
 
 
 
-//fonctionne pô    
+  
 // (secondDice.value  == "Force"){effectDice.value = strenghtEffect}
 // (secondDice.value  == "Endurance") {effectDice.value = staminaEffect}
 // (secondDice.value  == "Agilité") {effectDice.value = agilityEffect}
