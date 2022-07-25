@@ -89,6 +89,8 @@ function getTheFourthDice(event) {
 function removeTheSameDice(event) {
    if  (firstDice.value === event.target.textContent && !event.target.classList.contains("selected"))
    (document.getElementById("firstDice")).value = ""
+   if  (secondDice.value === event.target.textContent && !event.target.classList.contains("selected"))
+   (document.getElementById("secondDice")).value = ""
 }
 
 console.log(firstDice.value);
