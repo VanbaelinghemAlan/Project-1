@@ -75,7 +75,8 @@ function getTheFirstDice(event) {
 
 function getTheSecondDice(event) {
     if (firstDice.value != "" )
-     (document.getElementById("secondDice")).value = event.target.textContent 
+    secondDice.value = event.target.textContent 
+    console.log("caca");
 }
 
 function getTheThirdDice(event) {
@@ -88,9 +89,9 @@ function getTheFourthDice(event) {
 
 function removeTheSameDice(event) {
    if  (firstDice.value === event.target.textContent && !event.target.classList.contains("selected"))
-   (document.getElementById("firstDice")).value = ""
+   firstDice.value = ""
    if  (secondDice.value === event.target.textContent && !event.target.classList.contains("selected"))
-   (document.getElementById("secondDice")).value = ""
+   secondDice.value = ""
 }
 
 console.log(firstDice.value);
