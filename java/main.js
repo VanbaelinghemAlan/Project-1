@@ -74,7 +74,7 @@ function getTheFirstDice(event) {
 }
 
 function getTheSecondDice(event) {
-    if (firstDice.value != "" )
+    if (firstDice.value != "" ) //à mettre au dessus de la premier fonction !
     secondDice.value = event.target.textContent 
     console.log("caca");
 }
