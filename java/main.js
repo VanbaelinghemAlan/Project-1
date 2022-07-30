@@ -63,28 +63,21 @@ document.getElementById("totalStrenght").value = calcStrenght
 //Définir les caractéristiques dans le jet de dès
 characteristic.addEventListener("click",getTheFirstDice)
 characteristic.addEventListener("click",removeTheSameDice)
-characteristic.addEventListener("click",getTheSecondDice)
+// characteristic.addEventListener("click",getTheSecondDice)
 
-
+let donothing = 0
 
 function getTheFirstDice(event) {
+    if (firstDice.value !=="" && secondDice.value !== "" && thirdDice.value !=="" && theLastDice == 2)
+    fourthDice.value = event.target.textContent
+    if (firstDice.value !=="" && secondDice.value !== "" && theLastDice == 1 || firstDice.value !=="" && secondDice.value !== "" && fourthDice.value == "")
+    thirdDice.value = event.target.textContent
+    if (firstDice.value !== "" && secondDice.value == "")
+    secondDice.value = event.target.textContent
+    if (secondDice.value == "" && firstDice.value == ""|| firstDice.value == "")
     firstDice.value = event.target.textContent
     event.target.classList.toggle("selected")
-    console.log(firstDice.value);
-}
-
-function getTheSecondDice(event) {
-    if (firstDice.value != "" ) //à mettre au dessus de la premier fonction !
-    secondDice.value = event.target.textContent 
-    console.log("caca");
-}
-
-function getTheThirdDice(event) {
-  (document.getElementById("thirdDice")).value = event.target.textContent 
-}
-
-function getTheFourthDice(event) {
-   (document.getElementById("fourthDice")).value = event.target.textContent 
+    if (theLastDice === 0) thirdDice.value = ""
 }
 
 function removeTheSameDice(event) {
@@ -92,11 +85,15 @@ function removeTheSameDice(event) {
    firstDice.value = ""
    if  (secondDice.value === event.target.textContent && !event.target.classList.contains("selected"))
    secondDice.value = ""
+   if  (thirdDice.value === event.target.textContent && !event.target.classList.contains("selected"))
+   thirdDice.value = ""
+   if  (fourthDice.value === event.target.textContent && !event.target.classList.contains("selected"))
+   fourthDice.value = ""
 }
 
 console.log(firstDice.value);
 //----------------------------------------------------------------------
-//Ajouter et retirer des caractéristiques pour le jet de dès
+//Ajouter et retirer des caractéristiques pour le jet de dès (+ et -)
 plusBtn.addEventListener("click",getAnotherCarac)
 minusBtn.addEventListener("click",removeAnotherCarac)
 
@@ -108,6 +105,7 @@ function getAnotherCarac(event) {
     if (theLastDice  >= 2)
     fourthDice.classList.add("active")
     if(theLastDice  >2) theLastDice  = 2
+    console.log(theLastDice);
 }
 
 function removeAnotherCarac(event) {
@@ -116,9 +114,10 @@ function removeAnotherCarac(event) {
     if (theLastDice  < 1)
     thirdDice.classList.remove("active")
     if(theLastDice  <0) theLastDice  = 0
-    
+    console.log(theLastDice);
 }
 //-------------------------------------------------------------------
+
 
 
 
