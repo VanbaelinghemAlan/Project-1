@@ -2,7 +2,8 @@ const attributeTotal = document.getElementsByClassName("attTt")
 
 const characteristic = document.getElementById("characteristic")
 const btnCharacteristic = characteristic.getElementsByClassName("carac");
-// const btn2Characteristic = characteristic.querySelectorAll("button")
+const queryCharacteristic = characteristic.querySelectorAll("button")
+
 console.table(btnCharacteristic);
 // console.table(btn2Characteristic);
 
@@ -72,10 +73,13 @@ document.getElementById("totalStrenght").value = calcStrenght
 // ----------------------------------------------------------------------------------------------
 
 //Définir les caractéristiques dans le jet de dès
-characteristic.addEventListener("click",getTheDice)
-characteristic.addEventListener("click",removeTheSameDice)
-characteristic.addEventListener("click",getTheEffect)
-characteristic.addEventListener("click",setTheEffect)
+queryCharacteristic.forEach(function(button){
+    button.addEventListener("click",getTheDice)
+    button.addEventListener("click",removeTheSameDice)
+    button.addEventListener("click",getTheEffect)
+    button.addEventListener("click",setTheEffect)
+
+    })
 
 
 function getTheDice(event) {
