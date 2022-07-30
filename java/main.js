@@ -3,8 +3,11 @@ const attributeTotal = document.getElementsByClassName("attTt")
 const characteristic = document.getElementById("characteristic")
 const btnCharacteristic = characteristic.getElementsByClassName("carac");
 const queryCharacteristic = characteristic.querySelectorAll("button")
+const nBCharacteristic = characteristic.getElementsByClassName("nB")
+const adNbCharacteristic = characteristic.getElementsByClassName("adNb")
+const tTCharacteristic = characteristic.getElementsByClassName("tT")
 
-console.table(btnCharacteristic);
+console.table(nBCharacteristic);
 // console.table(btn2Characteristic);
 
     const baseList = document.getElementsByClassName("nB")
@@ -50,6 +53,23 @@ const perceptionEffect = "Vous obtiendrez une information sur le combat en fonct
 const stealthEffect = "Si la détection de l'ennemi est plus faible que votre jet, votre coup sera critique"
 const willEffect = "Vous pouvez agir malgré l'effet qui vous handicape"
 const charismaEffect = "Infligez un malus de -2 sur votre cible"
+
+const position = document.querySelectorAll("img")
+const textPos = document.getElementById("textPos")
+const defaultPos = document.getElementById("defaultPos")
+const textDefaultPos = "Position neutre : Sans bonus, sans malus"
+const offPos = document.getElementById("offPos")
+const textOffPos = "Position offensive : +3D à l'attaque, -2 en Def Mêlée et Def Distance"
+const defPos = document.getElementById("defPos")
+const textDefPof = "Position défensive : +2 en Def Mêlée, -3D à l'attaque"
+const covPos = document.getElementById("covPos")
+const textCovPos = "Position à couvert : +2 en Def Distance, -3D à l'attaque" 
+const aggPos = document.getElementById("aggPos")
+const textAggPos = "Position de provocation : +1 en Def Mêleé et Def Distance. Statut : Aggro"
+const comPos = document.getElementById("comPos")
+const textComPos = "Position d'action combiné : Vous pouvez effectuer des actions combinées" 
+const techPos = document.getElementById("techPos")
+const textTechPos = "Position technique : Vous pouvez effectuer une action technique" 
 //les valeurs sont temporaires
 //-------------------------------------------------------
         console.log(typeof document.getElementById("symbiosisTotal").value);
@@ -71,15 +91,22 @@ document.getElementById("totalStrenght").value = calcStrenght
 //changer la valeur html grâce au bouton, ne change pas le total
 //intégrer les LI dans une boucle
 // ----------------------------------------------------------------------------------------------
-
 //Définir les caractéristiques dans le jet de dès
 queryCharacteristic.forEach(function(button){
     button.addEventListener("click",getTheDice)
     button.addEventListener("click",removeTheSameDice)
     button.addEventListener("click",getTheEffect)
     button.addEventListener("click",setTheEffect)
+ })
 
-    })
+//  nBCharacteristic.forEach(function getTheTotal() { 
+// })
+
+// function getTheTotal() {
+//     tTCharacteristic.value=(nBCharacteristic+adNbCharacteristic)
+//     console.log(getTheTotal);
+// }
+
 
 
 function getTheDice(event) {
@@ -138,7 +165,7 @@ function getTheEffect(params) {
     }
     
  function setTheEffect(getTheEffect){
-        if(effectDice.value === "Force") effectDice.value = strenghtEffect
+        if(effectDice.value === "Force") {effectDice.value = strenghtEffect}
         if(effectDice.value === "Endurance") {effectDice.value = staminaEffect}
         if(effectDice.value === "Agilité") {effectDice.value = agilityEffect}
         if(effectDice.value === "Intuition") {effectDice.value = intuitionEffect}
@@ -153,12 +180,28 @@ function getTheEffect(params) {
 
 //Définir les caractéristiques (on va d'abord faire en sorte que le reste fonctionne)
 
+//-----------------------------------------------------------
+//Définir les postures
+position.forEach(function(img){
+    img.addEventListener("click",getThePosition)
+ })
 
-
-
-
-
-
+function getThePosition(event) {
+    if (event.target.classList.value === "defaultPos")
+    textPos.value = textDefaultPos
+    if (event.target.classList.value === "offPos")
+    textPos.value = textOffPos
+    if (event.target.classList.value === "defPos")
+    textPos.value = textDefPof
+    if (event.target.classList.value === "covPos")
+    textPos.value = textCovPos
+    if (event.target.classList.value === "aggPos")
+    textPos.value = textAggPos
+    if (event.target.classList.value === "comPos")
+    textPos.value = textComPos 
+    if (event.target.classList.value === "techPos")
+    textPos.value = textTechPos 
+}
 
 // TO DO LIST > Limiter le nombre de toggle
-//              Parfois il met une valeur à la con dans le firstDice, secondDice etc...
+//              
