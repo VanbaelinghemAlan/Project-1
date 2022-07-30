@@ -61,10 +61,12 @@ document.getElementById("totalStrenght").value = calcStrenght
 // ----------------------------------------------------------------------------------------------
 
 //Définir les caractéristiques dans le jet de dès
-characteristic.addEventListener("click",getTheFirstDice)
+characteristic.addEventListener("click",getTheDice)
 characteristic.addEventListener("click",removeTheSameDice)
+characteristic.addEventListener("click",getTheEffect)
 
-function getTheFirstDice(event) {
+
+function getTheDice(event) {
     if (firstDice.value !=="" && secondDice.value !== "" && thirdDice.value !=="" && theLastDice == 2 && fourthDice.value == "")
     fourthDice.value = event.target.textContent 
     if (firstDice.value !=="" && secondDice.value !== ""&& thirdDice.value == "" && theLastDice == 1 || firstDice.value !=="" && secondDice.value !== "" &&  thirdDice.value == "" && theLastDice == 2)
@@ -87,6 +89,7 @@ function removeTheSameDice(event) {
     if  (fourthDice.value === event.target.textContent && !event.target.classList.contains("selected"))
     fourthDice.value = ""
 }
+
 //----------------------------------------------------------------------
 //Ajouter et retirer des caractéristiques pour le jet de dès (+ et -)
 plusBtn.addEventListener("click",getAnotherCarac)
@@ -112,15 +115,22 @@ function removeAnotherCarac(event) {
 //-------------------------------------------------------------------
 
 // TO DO LIST > Limiter le nombre de toggle
+//              Parfois il met une valeur à la con dans le firstDice, secondDice etc...
 
+    function getTheEffect(params) {
+        if (theLastDice ==0) effectDice.value = secondDice.value
+        if (theLastDice ==1) effectDice.value = thirdDice.value
+        if (theLastDice ==2) effectDice.value = fourthDice.value
+    }
 // effectDice.value = secondDice.value 
-function takeTheLastEffect() {
-    return effectDice.value += secondDice.value
+// function takeTheLastEffect() {
+//     if (secondDice.value!="") {
+//         effectDice.value = secondDice.value
+//     }
     // if(theLastDice ==  && secondDice.value !== "") effectDice.value = thirdDice.value
     // if(theLastDice === 1) theEffectNb += thirdDice.value
     // if(theLastDice === 2) theEffectNb += fourthDice.value
-}
-takeTheLastEffect
+// }
 //  function theEffectIs(takeTheLastEffect) {
 //     if(takeTheLastEffect == "Force"){effectDice.value = strenghtEffect}
 //     if(takeTheLastEffect == "Endurance"){effectDice.value = staminaEffect}
