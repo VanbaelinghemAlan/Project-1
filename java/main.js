@@ -64,6 +64,7 @@ document.getElementById("totalStrenght").value = calcStrenght
 characteristic.addEventListener("click",getTheDice)
 characteristic.addEventListener("click",removeTheSameDice)
 characteristic.addEventListener("click",getTheEffect)
+characteristic.addEventListener("click",setTheEffect)
 
 
 function getTheDice(event) {
@@ -122,26 +123,16 @@ function removeAnotherCarac(event) {
         if (theLastDice ==1) effectDice.value = thirdDice.value
         if (theLastDice ==2) effectDice.value = fourthDice.value
     }
-// effectDice.value = secondDice.value 
-// function takeTheLastEffect() {
-//     if (secondDice.value!="") {
-//         effectDice.value = secondDice.value
-//     }
-    // if(theLastDice ==  && secondDice.value !== "") effectDice.value = thirdDice.value
-    // if(theLastDice === 1) theEffectNb += thirdDice.value
-    // if(theLastDice === 2) theEffectNb += fourthDice.value
-// }
-//  function theEffectIs(takeTheLastEffect) {
-//     if(takeTheLastEffect == "Force"){effectDice.value = strenghtEffect}
-//     if(takeTheLastEffect == "Endurance"){effectDice.value = staminaEffect}
-//  }
-// (secondDice.value  == "Force"){effectDice.value = strenghtEffect}
-// (secondDice.value  == "Endurance") {effectDice.value = staminaEffect}
-// (secondDice.value  == "Agilité") {effectDice.value = agilityEffect}
-// (secondDice.value  == "Intuition") {effectDice.value = intuitionEffect}
-// (secondDice.value  == "Rapidité") {effectDice.value = speedEffect}
-// (secondDice.value  == "Réactivité") {effectDice.value = reflexEffect}
-// (secondDice.value  == "Perception") {effectDice.value = perceptionEffect}
-// (secondDice.value  == "Furtivité") {effectDice.value = stealthEffect}
-// (secondDice.value  == "Volonté") {effectDice.value = willEffect}
-// (secondDice.value  == "Charisme") {effectDice.value = charismaEffect} 
+
+    function setTheEffect(getTheEffect){
+    if(effectDice.value === "Force") effectDice.value = strenghtEffect
+    if(effectDice.value === "Endurance") {effectDice.value = staminaEffect}
+    if(effectDice.value === "Agilité") {effectDice.value = agilityEffect}
+    if(effectDice.value === "Intuition") {effectDice.value = intuitionEffect}
+    if(effectDice.value === "Rapidité") {effectDice.value = speedEffect}
+    if(effectDice.value === "Réactivité") {effectDice.value = reflexEffect}
+    if(effectDice.value === "Perception") {effectDice.value = perceptionEffect}
+    if(effectDice.value === "Furtivité") {effectDice.value = stealthEffect}
+    if(effectDice.value === "Volonté") {effectDice.value = willEffect}
+    if(effectDice.value === "Charisme") {effectDice.value = charismaEffect} 
+    }
