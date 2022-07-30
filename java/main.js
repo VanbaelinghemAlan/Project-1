@@ -1,6 +1,10 @@
 const attributeTotal = document.getElementsByClassName("attTt")
 
 const characteristic = document.getElementById("characteristic")
+const btnCharacteristic = characteristic.getElementsByClassName("carac");
+// const btn2Characteristic = characteristic.querySelectorAll("button")
+console.table(btnCharacteristic);
+// console.table(btn2Characteristic);
 
     const baseList = document.getElementsByClassName("nB")
     const adList = document.getElementsByClassName("adNb")
@@ -16,6 +20,13 @@ const fourthDice = document.getElementById("fourthDice")
 const effectDice = document.getElementById("effectDice")
 const plusBtn = document.getElementById("plusBtn")
 const minusBtn = document.getElementById("minusBtn")
+
+const vitality = document.getElementById("vitalityTotal")
+const defMelee = document.getElementById("defMeleeTotal")
+const defRange = document.getElementById("defRangeTotal")
+const energie = document.getElementById("energieTotal")
+const detection = document.getElementById("detectionTotal")
+const symbiosis = document.getElementById("symbiosisTotal")
 
 const strenght = document.getElementById("strenght")
 const stamina = document.getElementById("stamina")
@@ -39,7 +50,7 @@ const stealthEffect = "Si la détection de l'ennemi est plus faible que votre je
 const willEffect = "Vous pouvez agir malgré l'effet qui vous handicape"
 const charismaEffect = "Infligez un malus de -2 sur votre cible"
 //les valeurs sont temporaires
-
+//-------------------------------------------------------
         console.log(typeof document.getElementById("symbiosisTotal").value);
 
 
@@ -115,24 +126,35 @@ function removeAnotherCarac(event) {
 }
 //-------------------------------------------------------------------
 
-// TO DO LIST > Limiter le nombre de toggle
-//              Parfois il met une valeur à la con dans le firstDice, secondDice etc...
 
-    function getTheEffect(params) {
+function getTheEffect(params) {
         if (theLastDice ==0) effectDice.value = secondDice.value
         if (theLastDice ==1) effectDice.value = thirdDice.value
         if (theLastDice ==2) effectDice.value = fourthDice.value
     }
+    
+ function setTheEffect(getTheEffect){
+        if(effectDice.value === "Force") effectDice.value = strenghtEffect
+        if(effectDice.value === "Endurance") {effectDice.value = staminaEffect}
+        if(effectDice.value === "Agilité") {effectDice.value = agilityEffect}
+        if(effectDice.value === "Intuition") {effectDice.value = intuitionEffect}
+        if(effectDice.value === "Rapidité") {effectDice.value = speedEffect}
+        if(effectDice.value === "Réactivité") {effectDice.value = reflexEffect}
+        if(effectDice.value === "Perception") {effectDice.value = perceptionEffect}
+        if(effectDice.value === "Furtivité") {effectDice.value = stealthEffect}
+        if(effectDice.value === "Volonté") {effectDice.value = willEffect}
+        if(effectDice.value === "Charisme") {effectDice.value = charismaEffect} 
+}   
+//-------------------------------------------------------------------
 
-    function setTheEffect(getTheEffect){
-    if(effectDice.value === "Force") effectDice.value = strenghtEffect
-    if(effectDice.value === "Endurance") {effectDice.value = staminaEffect}
-    if(effectDice.value === "Agilité") {effectDice.value = agilityEffect}
-    if(effectDice.value === "Intuition") {effectDice.value = intuitionEffect}
-    if(effectDice.value === "Rapidité") {effectDice.value = speedEffect}
-    if(effectDice.value === "Réactivité") {effectDice.value = reflexEffect}
-    if(effectDice.value === "Perception") {effectDice.value = perceptionEffect}
-    if(effectDice.value === "Furtivité") {effectDice.value = stealthEffect}
-    if(effectDice.value === "Volonté") {effectDice.value = willEffect}
-    if(effectDice.value === "Charisme") {effectDice.value = charismaEffect} 
-    }
+//Définir les caractéristiques (on va d'abord faire en sorte que le reste fonctionne)
+
+
+
+
+
+
+
+
+// TO DO LIST > Limiter le nombre de toggle
+//              Parfois il met une valeur à la con dans le firstDice, secondDice etc...
