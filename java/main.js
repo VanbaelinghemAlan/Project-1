@@ -68,7 +68,7 @@ characteristic.addEventListener("click",removeTheSameDice)
 function getTheFirstDice(event) {
     if (firstDice.value !=="" && secondDice.value !== "" && thirdDice.value !=="" && theLastDice == 2 && fourthDice.value == "")
     fourthDice.value = event.target.textContent
-    if (firstDice.value !=="" && secondDice.value !== "" && theLastDice == 1||firstDice.value !=="" && secondDice.value !== "" && fourthDice.value !== "" && thirdDice.value =="" || firstDice.value !=="" && secondDice.value !== "" && fourthDice.value == "" || firstDice.value !== "" && secondDice.value !== "" && theLastDice == 2 &&  thirdDice == "" && fourthDice.value !== "")
+    if (firstDice.value !=="" && secondDice.value !== ""&& thirdDice.value == "" && theLastDice == 1 || firstDice.value !=="" && secondDice.value !== "" &&  thirdDice.value == "" && theLastDice == 2)
     thirdDice.value = event.target.textContent
     if (firstDice.value !== "" && secondDice.value == "")
     secondDice.value = event.target.textContent
@@ -76,6 +76,7 @@ function getTheFirstDice(event) {
     firstDice.value = event.target.textContent
     event.target.classList.toggle("selected")
     if (theLastDice === 0) thirdDice.value = ""
+    takeTheLastEffect
 }
 
 function removeTheSameDice(event) {
@@ -88,8 +89,6 @@ function removeTheSameDice(event) {
     if  (fourthDice.value === event.target.textContent && !event.target.classList.contains("selected"))
     fourthDice.value = ""
 }
-
-console.log(firstDice.value);
 //----------------------------------------------------------------------
 //Ajouter et retirer des caractéristiques pour le jet de dès (+ et -)
 plusBtn.addEventListener("click",getAnotherCarac)
@@ -103,7 +102,6 @@ function getAnotherCarac(event) {
     if (theLastDice  >= 2)
     fourthDice.classList.add("active")
     if(theLastDice  >2) theLastDice  = 2
-    console.log(theLastDice);
 }
 
 function removeAnotherCarac(event) {
@@ -112,15 +110,21 @@ function removeAnotherCarac(event) {
     if (theLastDice  < 1)
     thirdDice.classList.remove("active")
     if(theLastDice  <0) theLastDice  = 0
-    console.log(theLastDice);
 }
 //-------------------------------------------------------------------
 
+// TO DO LIST > Limiter le nombre de toggle
 
-
-
-
-
+function takeTheLastEffect(theLastDice) {
+    let remplaceEffect = document.classList("effectDice").value
+    if(theLastDice === 0) remplaceEffect += secondDice.value 
+    // if(theLastDice === 1) theEffectNb += thirdDice.value
+    // if(theLastDice === 2) theEffectNb += fourthDice.value
+}
+//  function theEffectIs(takeTheLastEffect) {
+//     if(takeTheLastEffect == "Force"){effectDice.value = strenghtEffect}
+//     if(takeTheLastEffect == "Endurance"){effectDice.value = staminaEffect}
+//  }
 // (secondDice.value  == "Force"){effectDice.value = strenghtEffect}
 // (secondDice.value  == "Endurance") {effectDice.value = staminaEffect}
 // (secondDice.value  == "Agilité") {effectDice.value = agilityEffect}
