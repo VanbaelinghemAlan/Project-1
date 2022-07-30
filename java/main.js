@@ -63,14 +63,12 @@ document.getElementById("totalStrenght").value = calcStrenght
 //Définir les caractéristiques dans le jet de dès
 characteristic.addEventListener("click",getTheFirstDice)
 characteristic.addEventListener("click",removeTheSameDice)
-// characteristic.addEventListener("click",getTheSecondDice)
 
-let donothing = 0
 
 function getTheFirstDice(event) {
-    if (firstDice.value !=="" && secondDice.value !== "" && thirdDice.value !=="" && theLastDice == 2)
+    if (firstDice.value !=="" && secondDice.value !== "" && thirdDice.value !=="" && theLastDice == 2 && fourthDice.value == "")
     fourthDice.value = event.target.textContent
-    if (firstDice.value !=="" && secondDice.value !== "" && theLastDice == 1 || firstDice.value !=="" && secondDice.value !== "" && fourthDice.value == "")
+    if (firstDice.value !=="" && secondDice.value !== "" && theLastDice == 1||firstDice.value !=="" && secondDice.value !== "" && fourthDice.value !== "" && thirdDice.value =="" || firstDice.value !=="" && secondDice.value !== "" && fourthDice.value == "" || firstDice.value !== "" && secondDice.value !== "" && theLastDice == 2 &&  thirdDice == "" && fourthDice.value !== "")
     thirdDice.value = event.target.textContent
     if (firstDice.value !== "" && secondDice.value == "")
     secondDice.value = event.target.textContent
@@ -81,14 +79,14 @@ function getTheFirstDice(event) {
 }
 
 function removeTheSameDice(event) {
-   if  (firstDice.value === event.target.textContent && !event.target.classList.contains("selected"))
-   firstDice.value = ""
-   if  (secondDice.value === event.target.textContent && !event.target.classList.contains("selected"))
-   secondDice.value = ""
-   if  (thirdDice.value === event.target.textContent && !event.target.classList.contains("selected"))
-   thirdDice.value = ""
-   if  (fourthDice.value === event.target.textContent && !event.target.classList.contains("selected"))
-   fourthDice.value = ""
+    if  (firstDice.value === event.target.textContent && !event.target.classList.contains("selected"))
+    firstDice.value = ""
+    if  (secondDice.value === event.target.textContent && !event.target.classList.contains("selected"))
+    secondDice.value = ""
+    if  (thirdDice.value === event.target.textContent && !event.target.classList.contains("selected"))
+    thirdDice.value = ""
+    if  (fourthDice.value === event.target.textContent && !event.target.classList.contains("selected"))
+    fourthDice.value = ""
 }
 
 console.log(firstDice.value);
