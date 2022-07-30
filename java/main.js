@@ -64,10 +64,9 @@ document.getElementById("totalStrenght").value = calcStrenght
 characteristic.addEventListener("click",getTheFirstDice)
 characteristic.addEventListener("click",removeTheSameDice)
 
-
 function getTheFirstDice(event) {
     if (firstDice.value !=="" && secondDice.value !== "" && thirdDice.value !=="" && theLastDice == 2 && fourthDice.value == "")
-    fourthDice.value = event.target.textContent
+    fourthDice.value = event.target.textContent 
     if (firstDice.value !=="" && secondDice.value !== ""&& thirdDice.value == "" && theLastDice == 1 || firstDice.value !=="" && secondDice.value !== "" &&  thirdDice.value == "" && theLastDice == 2)
     thirdDice.value = event.target.textContent
     if (firstDice.value !== "" && secondDice.value == "")
@@ -76,7 +75,6 @@ function getTheFirstDice(event) {
     firstDice.value = event.target.textContent
     event.target.classList.toggle("selected")
     if (theLastDice === 0) thirdDice.value = ""
-    takeTheLastEffect
 }
 
 function removeTheSameDice(event) {
@@ -115,12 +113,14 @@ function removeAnotherCarac(event) {
 
 // TO DO LIST > Limiter le nombre de toggle
 
-function takeTheLastEffect(theLastDice) {
-    let remplaceEffect = document.classList("effectDice").value
-    if(theLastDice === 0) remplaceEffect += secondDice.value 
+// effectDice.value = secondDice.value 
+function takeTheLastEffect() {
+    return effectDice.value += secondDice.value
+    // if(theLastDice ==  && secondDice.value !== "") effectDice.value = thirdDice.value
     // if(theLastDice === 1) theEffectNb += thirdDice.value
     // if(theLastDice === 2) theEffectNb += fourthDice.value
 }
+takeTheLastEffect
 //  function theEffectIs(takeTheLastEffect) {
 //     if(takeTheLastEffect == "Force"){effectDice.value = strenghtEffect}
 //     if(takeTheLastEffect == "Endurance"){effectDice.value = staminaEffect}
