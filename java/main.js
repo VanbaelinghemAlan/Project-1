@@ -75,19 +75,19 @@ const textTechPos = "Position technique : Vous pouvez effectuer une action techn
         console.log(typeof document.getElementById("symbiosisTotal").value);
 
 
-let totalStrenght = parseInt(document.getElementById("totalStrenght").value)
-console.log(totalStrenght);
+// let totalStrenght = parseInt(document.getElementById("totalStrenght").value)
+// console.log(totalStrenght);
 
-let baseStrenght = parseInt(document.getElementById("baseStrenght").value)
-console.log(baseStrenght);
+// let baseStrenght = parseInt(document.getElementById("baseStrenght").value)
+// console.log(baseStrenght);
 
-let adStrenght = parseInt(document.getElementById("adStrenght").value)
-console.log(adStrenght);
+// let adStrenght = parseInt(document.getElementById("adStrenght").value)
+// console.log(adStrenght);
 
-let calcStrenght = (baseStrenght+adStrenght)
-console.log((calcStrenght));
+// let calcStrenght = (baseStrenght+adStrenght)
+// console.log((calcStrenght));
 
-document.getElementById("totalStrenght").value = calcStrenght
+// document.getElementById("totalStrenght").value = calcStrenght
 //changer la valeur html grâce au bouton, ne change pas le total
 //intégrer les LI dans une boucle
 // ----------------------------------------------------------------------------------------------
@@ -98,16 +98,6 @@ queryCharacteristic.forEach(function(button){
     button.addEventListener("click",getTheEffect)
     button.addEventListener("click",setTheEffect)
  })
-
-//  nBCharacteristic.forEach(function getTheTotal() { 
-// })
-
-// function getTheTotal() {
-//     tTCharacteristic.value=(nBCharacteristic+adNbCharacteristic)
-//     console.log(getTheTotal);
-// }
-
-
 
 function getTheDice(event) {
     if (firstDice.value !=="" && secondDice.value !== "" && thirdDice.value !=="" && theLastDice == 2 && fourthDice.value == "")
@@ -179,8 +169,14 @@ function getTheEffect(params) {
 //-------------------------------------------------------------------
 
 //Définir les caractéristiques (on va d'abord faire en sorte que le reste fonctionne)
-// vitality.value = 
-// console.log(vitality.value);
+vitality.value = (parseInt(document.getElementById("totalStrenght").value)+parseInt(document.getElementById("totalStamina").value))*10
+console.log(vitality.value);
+defMelee.value = (parseInt(document.getElementById("totalAgility").value)+parseInt(document.getElementById("totalInstinct").value))
+defRange.value = (parseInt(document.getElementById("totalSpeed").value)+parseInt(document.getElementById("totalReflex").value))
+energie.value = (parseInt(document.getElementById("totalWill").value)+parseInt(document.getElementById("totalCharisma").value))*10
+detection.value = (parseInt(document.getElementById("totalPerception").value)+parseInt(document.getElementById("totalStealth").value))
+
+
 
 //-----------------------------------------------------------
 //Définir les postures
@@ -204,6 +200,29 @@ function getThePosition(event) {
     if (event.target.classList.value === "techPos")
     textPos.value = textTechPos 
 }
+//--------------------------------------------------------------
+
+// // document.querySelectorAll(dataset.data-id)
+// function totalCarac(params) {
+//     let base = document.querySelectorAll.dataset.base
+// }
+let toto = document.querySelectorAll("[data-base]")
+let titi = document.querySelectorAll("[data-advantage]")
+let tutu = document.querySelectorAll("[data-total]")
+console.log(toto);
+console.log(titi);
+console.log(tutu);
+
+
+
+
+// console.log(document.querySelectorAll("[data-base]"));
+
+
+
+
+
+
 
 // TO DO LIST > Limiter le nombre de toggle
-//              
+//             
