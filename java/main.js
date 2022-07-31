@@ -179,6 +179,8 @@ function getTheEffect(params) {
 //-------------------------------------------------------------------
 
 //Définir les caractéristiques (on va d'abord faire en sorte que le reste fonctionne)
+// vitality.value = 
+// console.log(vitality.value);
 
 //-----------------------------------------------------------
 //Définir les postures
