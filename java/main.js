@@ -439,14 +439,17 @@ function getAnotherCarac(event) {
   }   
   
   //-------------------------------------------------------------------
-  const mainDefMeleeIcon = document.getElementById("mainDefMeleeIcon")
-  console.log(mainDefMeleeIcon.p)
+  const defMeleeValue = document.getElementById("defMeleeValue")
+  const defRangeValue = document.getElementById("defRangeValue")
+  const detectionValue = document.getElementById("detectionValue")
+
+ 
   //Définir les caractéristiques (on va d'abord faire en sorte que le reste fonctionne)
   vitality.max = (parseInt(document.getElementById("totalStrenght").value)+parseInt(document.getElementById("totalStamina").value))*10
-  defMelee.value = (parseInt(document.getElementById("totalAgility").value)+parseInt(document.getElementById("totalInstinct").value))
-  defRange.value = (parseInt(document.getElementById("totalSpeed").value)+parseInt(document.getElementById("totalReflex").value))
+  defMeleeValue.innerText = (parseInt(document.getElementById("totalAgility").value)+parseInt(document.getElementById("totalInstinct").value))
+  defRangeValue.innerText = (parseInt(document.getElementById("totalSpeed").value)+parseInt(document.getElementById("totalReflex").value))
   energie.value = (parseInt(document.getElementById("totalWill").value)+parseInt(document.getElementById("totalCharisma").value))*10
-  detection.value = (parseInt(document.getElementById("totalPerception").value)+parseInt(document.getElementById("totalStealth").value))
+  detectionValue.innerText = (parseInt(document.getElementById("totalPerception").value)+parseInt(document.getElementById("totalStealth").value))
 
   
   let defMeleeTotal = document.getElementById("defMeleeTotal");
@@ -470,7 +473,6 @@ const vitalityButtonPlusPlus = document.getElementById("vitalityButtonPlusPlus")
 vitalityButtonPlus.addEventListener("click", getPlusVitality)
 function getPlusVitality(){
   vitality.value += 10
-  console.log(this.document.querySelector('p').textContent);
 }
 
 vitalityButtonMinos.addEventListener("click", getMinosVitality)
@@ -526,18 +528,22 @@ function getFullSymbiosis() {
   symbiosis.value = symbiosisTotal.max
 }
 
-
+// Prise en compte des caractéristiques pour truc truc
+//Force + Endurance = DefMêlée
   
   function updateDefMelee() {
-    defMelee.value = (parseInt(totalAgility.value) + parseInt(totalInstinct1.value));
+    DefMeleeValue = (parseInt(totalAgility.value) + parseInt(totalInstinct1.value)).innertext;
     localStorage.setItem("defMelee", defMelee.value);
   }
+//Agilité + Intuition = DefDistance
   function updateDefRange() {
     defRange.value = (parseInt(totalSpeed.value) + parseInt(totalReflex.value));
   }
+//Volonté + Charisme = Energie
   function updateEnergie() {
     energie.value = (parseInt(totalWill.value) + parseInt(totalCharisma.value)) * 10;
   }
+//Perception + Discrétion = Détection
   function updateDetection() {
     detection.value = (parseInt(totalPerception.value) + parseInt(totalStealth.value));
   }
