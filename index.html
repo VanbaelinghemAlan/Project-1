@@ -14,20 +14,16 @@
             <div class=firstInfo>
                     <div class="lastName" id="lastName" input="text">
                         <label for="lastName">Nom :</label>
-                        <input type="text" id="lastNameIn">
+                        <input type="text" id="lastNameIn" maxlength="15" size="15">
                     </div>
-
                     <div class="firstName" id="firstName" input="text">
                         <label for="firstName" id="firstName" input="text">Prénom :</label>
-                        <input type="text" id="firstNameIn">
+                        <input type="text" id="firstNameIn" maxlength="15" size="15">
                     </div>
-
-                    <div class="lvl" id="lvl">1</div>
-
-
-                    <img  class="imgCharacter" id="imgCharacter"src="/img/characterP.jpg" alt="characterImg">
-
-
+                    <div class="origin" id="origin" input="text">
+                        <label for="origin" id="originLabel" input="text">Lieu d'origine:</label>
+                        <input type="text" id="originInput">
+                    </div>
                     <div class="race" id="race">
                         <label for="race" id="labelrace" input="text">Race :</label>
                         <select class="race" name="option">
@@ -51,29 +47,77 @@
                             <option value="16">Sydri</option>
                         </select>
                     </div>
-
-                    <div class="classe" id="classe">
-                        <label for="classe" id="labelclasse" input="text">Classe primaire :</label>
-                        <select class="classe" name="option">
-                            <option value="" disabled selected>Choisissez votre première classe</option>
-                            <option value="0">Aucune</option>
-                            <option value="1">1er classe</option>
-                            <option value="2">2eme classe</option>
-                            <option value="3">3eme classe</option>
-                        </select><br>
-
-                        <label for="classe" id="labelclasse" input="text">Classe secondaire :</label>
-                        <select class="classe" name="option">
-                            <option value="" disabled selected>Choisissez votre seconde classe</option>
-                            <option value="0">Aucune</option>
-                            <option value="1">1er classe</option>
-                            <option value="2">2eme classe</option>
-                            <option value="3">3eme classe</option>
+<!-- Date de naissance -->
+                    <div class="birthdayZone" id="birthdayZone" input="text">
+                        <label for="birthday" id="labelbirthday" input="text">Date de naissance :</label>
+                        <select class="mounth" name="option">
+                            <option value="" disabled selected>Choisissez le jour</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>
+                            <option value="25">25</option>
+                            <option value="26">26</option>
+                            <option value="27">27</option>
+                            <option value="28">28</option>
+                            <option value="29">29</option>
+                            <option value="30">30</option>
+                        </select>
+                        <label for="birthday" id="labelbirthday" input="text"></label>
+                        <select class="mounth" name="option">
+                            <option value="" disabled selected>Choisissez le mois</option>
+                            <option value="1">Harmoren</option>
+                            <option value="2">Deyme</option>
+                            <option value="3">Thastea</option>
+                            <option value="4">Mirana</option>
+                            <option value="5">Isum</option>
+                            <option value="6">Oturn</option>
+                            <option value="7">Tane</option>
+                            <option value="8">Zamo</option>
+                            <option value="9">Hanope</option>
+                            <option value="10">Elhinis</option>
+                            <option value="11">Dranei</option>
+                            <option value="12">Elera</option>
+                        </select>
+                        <label for="birthday" id="labelbirthday" input="text"></label>
+<!-- Année -->
+                        <select class="mounth" name="option">
+                            <option value="" disabled selected>Choisissez le mois</option>
+                            <option value="1">Harmoren</option>
+                            <option value="2">Deyme</option>
+                            <option value="3">Thastea</option>
+                            <option value="4">Mirana</option>
+                            <option value="5">Isum</option>
+                            <option value="6">Oturn</option>
+                            <option value="7">Tane</option>
+                            <option value="8">Zamo</option>
+                            <option value="9">Hanope</option>
+                            <option value="10">Elhinis</option>
+                            <option value="11">Dranei</option>
+                            <option value="12">1800</option>
                         </select>
                     </div>
-
-                    <input  class="xp" id="xp" input="text" value="0">
-
+<!-- Date de naissance -->
                     <div class="faith" id="faith">
                         <label for="faith" id="faith" input="text">Allégeance :</label>
                         <select class="faith" name="option">
@@ -84,93 +128,179 @@
                             <option value="3">Dieu 3</option>
                         </select>
                     </div>
+                    <div class="classe" id="classe">
+                        <label for="classe" id="labelclasse" input="text">Classe primaire :</label>
+                        <select class="classe" name="option">
+                            <option value="" disabled selected>Choisissez votre première classe</option>
+                            <option value="0">Aucune</option>
+                            <option value="1">1er classe</option>
+                            <option value="2">2eme classe</option>
+                            <option value="3">3eme classe</option>
+                        </select>
 
-                    <div class="birthday" id="birthday" input="text">1 septembre 1975</div>
-                    <div class="vitality" id="vitality">Vitalité</div>
-                    <input  class="vitalityTotal attTt" id="vitalityTotal" value="0" disabled>
-                    <div class="defMelee" id="defMelee">Def Melée</div>
-                    <input  class="defMeleeTotal attTt" id="defMeleeTotal" value="0" disabled>
-                    <div class="defRange" id="defRange">Def Distance</div>
-                    <input  class="defRangeTotal attTt" id="defRangeTotal" value="0" disabled>
-                    <div class="energie" id="energie">Energie</div>
-                    <input  class="energieTotal attTt" id="energieTotal" value="0" disabled>
-                    <div class="detection" id="detection">Détection</div>
-                    <input  class="detectionTotal attTt" id="detectionTotal" value="0" disabled>
-                    <div class="symbiosis" id="symbiosis">Symbiose</div>
-                    <input  class="symbiosisTotal attTt" id="symbiosisTotal" value="0" disabled>
+                        <label for="classe" id="labelclasse" input="text">Classe secondaire :</label>
+                        <select class="classe" name="option">
+                            <option value="" disabled selected>Choisissez votre seconde classe</option>
+                            <option value="0">Aucune</option>
+                            <option value="1">1er classe</option>
+                            <option value="2">2eme classe</option>
+                            <option value="3">3eme classe</option>
+                        </select>
+                        <input  class="finalClasse" id="finalClasse"" input="text" value="" disabled>
+                    </div>
+                </div>
+                <!-- Xp et l'image -->
+                <div class="together" id="together">
+                    <div class="puntos" id="puntos">
+                        <label for="puntosFree">Points disponibles</label>
+                       <input type="text" id="puntosFree">
+                       <label for="puntosUsed">Points utilisés</label>
+                       <input type="text" id="puntosUsed">
+                       <label for="totalPuntos">Total de vos points</label>
+                       <input type="text" id="totalPuntos">
+                    </div> 
+                    <img  class="imgCharacter" id="imgCharacter"src="/img/characterP.jpg" alt="characterImg">
+                </div>
+                <!-- Xp et l'image -->
             </div>
-        </div>
-    </header>
-          <div class="mainContent" id="mainContent">
+            <div class="firstInfo">
+                <div class="jauge" id="jauge">
+                    <div class="jaugeButtonVita">
+                        <div class="attribut1" id='attribut1'>
+                            <div class="vitality" id="vitality">Vitalité
+                                <progress id="vitalityTotal" max="100%" value="50%"></progress></div><P>100</P>/<span>100</span>
+                            </div>
+                            <div class="threeButton" id="threeButton">
+                                <img class="vitalityButtonPlus" id="vitalityButtonPlus" src="/img/++.png" style="width: 25px"></img>
+                                <img class="vitalityButtonMinos" id="vitalityButtonMinos" src="/img/--.png" style="width: 25px"></img>
+                                <img class="vitalityButtonPlusPlus" id="vitalityButtonPlusPlus" src="/img/+++.png" style="width: 25px"></img>
+                            </div>
+                        </div>
+                        
+                        <div class="jaugeButtonEnergie">
+                            <div class="attribut2" id='attribut2'>
+                                <div class="energie" id="energie">Energie
+                                    <progress id="energieTotal" max="100" value="70"></progress></div><P>100</P>/<span>100</span>
+                                </div>
+                                
+                                <div class="threeButton" id="threeButton">
+                                    <img class="energieButton+" id="energieButtonPlus" src="/img/++.png" style="width: 25px"></img>
+                                    <img class="energieButton-" id="energieButtonMinos" src="/img/--.png" style="width: 25px"></img>
+                                    <img class="energieButton++" id="energieButtonPlusPlus" src="/img/+++.png" style="width: 25px"></img> 
+                                </div> 
+                            </div> 
+                            
+                            <div class="jaugeButtonSymbiosis">
+                                <div class="attribut3" id='attribut3'>
+                                    <div class="symbiosis" id="symbiosis">Symbiose
+                                        <progress id="symbiosisTotal" max="100" value="70"></progress></div><P>100</P>/<span>100</span>
+                                    </div>  
+                                    <div class="threeButton" id="threeButton">
+                                        <img class="symbiosisButton+" id="symbiosisButtonPlus" src="/img/++.png" style="width: 25px"></img>
+                                        <img class="symbiosisButton-" id="symbiosisButtonMinos" src="/img/--.png" style="width: 25px"></img>
+                                        <img class="symbiosisButton++" id="symbiosisButtonPlusPlus" src="/img/+++.png" style="width: 25px"></img>
+                                    </div>
+                                </div> 
+                            </div>
+                            <div class="theThreeIcons" id="theThreeIcons">
+                                <div class="defMelee" id="defMelee">
+                                    <div class="mainDefMeleeIcon" id="mainDefMeleeIcon">
+                                            <img class="defMeleeImg" id="defMeleeImg" src="/img/defM.png" alt="Défense Mêlée"><p>0</p>
+                                    </div>
+                                        <img class="bonusDefMeleeImg" id="bonusDefMeleeImg" src="/img/circleInk1.png" alt="Bonus Défense Mêlée">
+                                        <img class="penaltyDefMeleeImg" id="penaltyDefMeleeImg" src="/img/circleInk1.png" alt="Penalty Défense Mêlée">                  
+                                </div>
+                                <div class="defRange" id="defRange">
+                                    <div class="mainDefRangeIcon" id="mainDefRangeIcon">
+                                             <img class="defRangeImg" id="defRangeImg" src="/img/dodge.png" alt="Défense Distance"><p>0</p>
+                                    </div>
+                                    <img class="bonusDefRangeImg" id="bonusDefRangeImg" src="/img/circleInk1.png" alt="Bonus Défense Distance">
+                                    <img class="penaltyDefRangeImg" id="penaltyDefRangeImg" src="/img/circleInk1.png" alt="Penalty Défense Distance">
+                                </div>
+                                <div class="detectionIcon" id="detectionIcon">
+                                    <div class="detection" id="detection">
+                                         <img class="detectionImg" id="detectionImg" src="/img/eyes.png" alt="Détection"><p>0</p>
+                                    </div>
+                                        <img class="bonusDetectionImg" id="bonusDetectionImg" src="/img/circleInk1.png" alt="Bonus Detection">
+                                        <img class="penaltyDetectionImg" id="penaltyDetectionImg" src="/img/circleInk1.png" alt="Penalty Detection">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            
+            
+            <div class="mainContent" id="mainContent">
                 <ul class="characteristic" id="characteristic">
                     <li class="strenghtList" id="strenghtList">
-                    <button class="strenght carac" id="strenght">Force</button>
-                    <input class="baseStrenght nB" id="baseStrenght" data-base="base" value="3" type="number" min="1" max="15">
-                    <input class="adStrenght adNb" id="adStrenght" data-advantage="advantage" value="1" type="number" min="0" max="15">
-                    <input class="totalStrenght tT" id="totalStrenght" data-total="total" value="4" disabled>
+                        <button class="strenght carac" id="strenght">Force</button>
+                        <input class="baseStrenght nB" id="baseStrenght" data-base="base" value="3" type="number" min="1" max="15">
+                        <input class="adStrenght adNb" id="adStrenght" data-advantage="advantage" value="0" type="number" min="0" max="15">
+                        <input class="totalStrenght tT" id="totalStrenght" data-total="total" value="0" disabled>
                     </li>
-
+                    
                     <li class="staminaList" id="staminaList">
-                    <button class="stamina carac" id="stamina">Endurance</button>
-                    <input class="baseStamina nB" id="baseStamina" data-base="base" value="3" type="number" min="1" max="15">
-                    <input class="adStamina adNb" id="adStamina"data-advantage="advantage" value="0" type="number" min="0" max="15">
-                    <input class="totalStamina tT" id="totalStamina"data-total="total" value="2" disabled>
+                        <button class="stamina carac" id="stamina">Endurance</button>
+                        <input class="baseStamina nB" id="baseStamina" data-base="base" value="3" type="number" min="1" max="15">
+                        <input class="adStamina adNb" id="adStamina"data-advantage="advantage" value="0" type="number" min="0" max="15">
+                        <input class="totalStamina tT" id="totalStamina"data-total="total" value="0" disabled>
                     </li>
-
+                    
                     <li class="agilityList" id="agilityList">
-                    <button class="agility carac" id="agility">Agilité</button>
-                    <input class="baseAgility nB" id="baseAgility" value="3" type="number" min="1" max="15">
-                    <input class="adAgility adNb" id="adAgility" value="0" type="number" min="0" max="15">
-                    <input class="totalAgility tT" id="totalAgility" value="4" disabled>
+                        <button class="agility carac" id="agility">Agilité</button>
+                        <input class="baseAgility nB" id="baseAgility" value="3" type="number" min="1" max="15">
+                        <input class="adAgility adNb" id="adAgility" value="0" type="number" min="0" max="15">
+                        <input class="totalAgility tT" id="totalAgility" value="0" disabled>
                     </li>
-
-                    <li class="instinctList" id="instincttList">
-                    <button class="instinct carac" id="instinct">Intuition</button>
-                    <input class="baseInstinct nB" id="baseInstinct" value="3" type="number" min="1" max="15">
-                    <input class="adInstinct adNb" id="adInstinct" value="0" type="number" min="0" max="15">
-                    <input class="totalInstinct tT" id="totalInstinct" value="2" disabled>
+                    
+                    <li class="instinctList" id="instinctList">
+                        <button class="instinct carac" id="instinct">Intuition</button>
+                        <input class="baseInstinct nB" id="baseInstinct" value="3" type="number" min="1" max="15">
+                        <input class="adInstinct adNb" id="adInstinct" value="0" type="number" min="0" max="15">
+                        <input class="totalInstinct tT" id="totalInstinct" value="0" disabled>
                     </li>
-
+                    
                     <li class="speedList" id="speedList">
-                    <button class="speed carac" id="speed">Rapidité</button>
-                    <input class="baseSpeed nB" id="baseSpeed" value="3" type="number" min="1" max="15">
-                    <input class="adSpeed adNb" id="adSpeed" value="0" type="number" min="0" max="15">
-                    <input class="totalSpeed tT" id="totalSpeed" value="3" disabled>
+                        <button class="speed carac" id="speed">Rapidité</button>
+                        <input class="baseSpeed nB" id="baseSpeed" value="3" type="number" min="1" max="15">
+                        <input class="adSpeed adNb" id="adSpeed" value="0" type="number" min="0" max="15">
+                        <input class="totalSpeed tT" id="totalSpeed" value="0" disabled>
                     </li>
 
                     <li class="reflexList" id="reflexList">
                     <button class="reflex carac" id="reflex">Réactivité</button>
                     <input class="baseReflex nB" id="baseReflex" value="3" type="number" min="1" max="15">
                     <input class="adReflex adNb" id="adReflex" value="0" type="number" min="0" max="15">
-                    <input class="totalReflex tT" id="totalReflex" value="1" disabled>
-                    </li>
-
-                    <li class="perceptionList" id="perceptionList">
+                    <input class="totalReflex tT" id="totalReflex" value="0" disabled>
+                </li>
+                
+                <li class="perceptionList" id="perceptionList">
                     <button class="perception carac" id="perception">Perception</button>
                     <input class="basePerception nB" id="basePerception" value="3" type="number" min="1" max="15">
                     <input class="adPerception adNb" id="adPerception" value="0" type="number" min="0" max="15">
-                    <input class="totalPerception tT" id="totalPerception" value="3" disabled>
-                    </li>
+                    <input class="totalPerception tT" id="totalPerception" value="0" disabled>
+                </li>
 
-                    <li class="stealthList" id="stealthList">
+                <li class="stealthList" id="stealthList">
                     <button class="stealth carac" id="stealth">Furtivité</button>
                     <input class="baseStealth nB" id="baseStealth" value="3" type="number" min="1" max="15">
                     <input class="adStealth adNb" id="adStealth" value="0" type="number" min="0" max="15">
-                    <input class="totalStealth tT" id="totalStealth" value="2" disabled>
-                    </li> 
-                    
+                    <input class="totalStealth tT" id="totalStealth" value="0" disabled>
+                </li> 
+                
                     <li class="willList" id="willList">
                     <button class="will carac" id="will">Volonté</button>
                     <input class="baseWill nB" id="baseWill" value="3" type="number" min="1" max="15">
                     <input class="adWill adNb" id="adWill" value="0" type="number" min="0" max="15">
-                    <input class="totalWill tT" id="totalWill" value="1" disabled>
+                    <input class="totalWill tT" id="totalWill" value="0" disabled>
                     </li>
 
                     <li class="charismaList" id="charismaList">
                     <button class="charisma carac" id="charisma">Charisme</button>
                     <input class="baseCharisma nB" id="baseCharisma" value="3" type="number" min="1" max="15">
                     <input class="adCharisma adNb" id="adCharisma" value="0" type="number" min="0" max="15">
-                    <input class="totalCharisma tT" id="totalCharisma" value="4" disabled>
+                    <input class="totalCharisma tT" id="totalCharisma" value="0" disabled>
                     </li>
                 </ul>
                 <div class="secondContent" id="secondContent">
@@ -195,11 +325,94 @@
                             <input type="text" class="textPos" id="textPos" disabled value="Posture de combat">
                             <input type="text" class="firstDice" id="firstDice" disabled value=""><br>
                             <input type="text" class="secondDice" id="secondDice" disabled value="">
+                            <input type="number" class="oneRounded-input" id="oneRounded-input" disabled value="">
+                            <input type="number" class="twoRounded-input" id="twoRounded-input" disabled value="">
                             <img class="diceButton" id="diceButton" src="/img/dice.png" alt="dice">
                             <input type="text" class="thirdDice" id="thirdDice" disabled value=""><br>
                             <input type="text" class="fourthDice" id="fourthDice" disabled value="">
                             <input type="text" class="effectDice" id="effectDice" disabled value="">
+                            <input type="number" class="threeRounded-input" id="threeRounded-input" disabled value="">
+                            <input type="number" class="fourRounded-input" id="fourRounded-input" disabled value="">
                         </div>
+                        <div class="dicePlace" id="dicePlace">
+                            <input type="number" class="totalDice" id="totalDice" disabled value="">
+                                    <input type="number" class="mastery1" id="mastery1" disabled value="">
+                                    <input type="number" class="mastery2" id="mastery2" disabled value="">
+                                    <input type="number" class="mastery3" id="mastery3" disabled value="">
+                                    <input type="number" class="mastery4" id="mastery4" disabled value="">
+                        </div>
+                        <div class="allEffect" id="allEffect">
+                            <img class="burn" id="burn" src="/img/Burn icon.png" alt="Burn Icon">
+                            <img class="severEburn" id="severEburn" src="/img/Burn icon.png" alt="Severe Burn Icon">
+                            <img class="wet" id="wet" src="/img/Burn icon.png" alt="Wet Icon">
+                            <img class="soaked" id="soaked" src="/img/Burn icon.png" alt="Soaked Icon">
+                            <img class="burn" id="burn" src="/img/Burn icon.png" alt="Burn Icon">
+                            <img class="burn" id="burn" src="/img/Burn icon.png" alt="Burn Icon">
+                            <img class="burn" id="burn" src="/img/Burn icon.png" alt="Burn Icon">
+                            <img class="burn" id="burn" src="/img/Burn icon.png" alt="Burn Icon">
+                            <img class="burn" id="burn" src="/img/Burn icon.png" alt="Burn Icon">
+                            <img class="burn" id="burn" src="/img/Burn icon.png" alt="Burn Icon">
+                            <img class="burn" id="burn" src="/img/Burn icon.png" alt="Burn Icon">
+                            <img class="burn" id="burn" src="/img/Burn icon.png" alt="Burn Icon">
+                            <img class="burn" id="burn" src="/img/Burn icon.png" alt="Burn Icon">
+                            <img class="burn" id="burn" src="/img/Burn icon.png" alt="Burn Icon">
+                            <img class="burn" id="burn" src="/img/Burn icon.png" alt="Burn Icon">
+                            <img class="burn" id="burn" src="/img/Burn icon.png" alt="Burn Icon">
+                            <img class="burn" id="burn" src="/img/Burn icon.png" alt="Burn Icon">
+                            <img class="burn" id="burn" src="/img/Burn icon.png" alt="Burn Icon">
+                            <img class="burn" id="burn" src="/img/Burn icon.png" alt="Burn Icon">
+                            <img class="burn" id="burn" src="/img/Burn icon.png" alt="Burn Icon">
+                            <img class="burn" id="burn" src="/img/Burn icon.png" alt="Burn Icon">
+                            <img class="burn" id="burn" src="/img/Burn icon.png" alt="Burn Icon">
+                            <img class="burn" id="burn" src="/img/Burn icon.png" alt="Burn Icon">
+                            <img class="burn" id="burn" src="/img/Burn icon.png" alt="Burn Icon">
+                            <img class="burn" id="burn" src="/img/Burn icon.png" alt="Burn Icon">
+                            <img class="burn" id="burn" src="/img/Burn icon.png" alt="Burn Icon">
+                            <img class="burn" id="burn" src="/img/Burn icon.png" alt="Burn Icon">
+                            <img class="burn" id="burn" src="/img/Burn icon.png" alt="Burn Icon">
+                            <img class="burn" id="burn" src="/img/Burn icon.png" alt="Burn Icon">
+                            <img class="burn" id="burn" src="/img/Burn icon.png" alt="Burn Icon">
+                            <img class="burn" id="burn" src="/img/Burn icon.png" alt="Burn Icon">
+                            <img class="burn" id="burn" src="/img/Burn icon.png" alt="Burn Icon">
+                            <img class="burn" id="burn" src="/img/Burn icon.png" alt="Burn Icon">
+                            <img class="burn" id="burn" src="/img/Burn icon.png" alt="Burn Icon">
+                            <img class="burn" id="burn" src="/img/Burn icon.png" alt="Burn Icon">
+                            <img class="burn" id="burn" src="/img/Burn icon.png" alt="Burn Icon">
+
+                        </div>
+                        <div class="resultPlace" id="resultPlace">
+                            <input type="text" class="detailResult" id="detailResult" disabled value="">
+                            <input type="text" class="diceResult" id="diceResult" disabled value="">
+                         </div>
+                        <div class="permissionZone" id="permissionZone">
+                        </div>
+                        <div class="attackPlace" id="attackPlace">    
+                        </div>
+                    </div>
+                </div>
+<!-- EQUIPEMENT PORTE -->
+                <div class="gear" id="gear">
+                    <div class="headGear" id="headGear">Tête</div>
+                    <div class="amuletGear" id="amuletGear">Amulette</div>
+                    <div class="outfitGear" id="outfitGear">Tenue</div>
+                    <div class="leftArmGear" id="leftArmGear">Bras gauche</div>
+                    <div class="leftRingGear" id="leftRingGear">Anneau gauche</div>
+                    <div class="rightArmGear" id="rightArmGear">Bras droit</div>
+                    <div class="rightRingGear" id="rightRingGear">Anneau droit</div>
+                    <div class="accessoryGear1" id="accessoryGear1">Accessoire 1</div>
+                    <div class="accessoryGear2" id="accessoryGear2">Accessoire 1</div>
+
+                    <div class="weapon1" id="weapon1">Première arme</div>
+                    <div class="weapon2" id="weapon2">Deuxième arme</div>
+                    <div class="weapon3" id="weapon3">Troisième arme</div>
+                    </div>
+
+
+
+
+                    
+                    <div class="bodyOrfen" id="bodyOrfen">
+                        <img class="bodySilhouette_Orfen" id="bodySilhouette_Orfen" src="/img/silhouette Orfen 1 perso.png" alt="Silhouette Orfen">
                     </div>
                 </div>
          </div>
