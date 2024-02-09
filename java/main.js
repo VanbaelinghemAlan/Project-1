@@ -468,21 +468,28 @@ function getAnotherCarac(event) {
 const vitalityButtonPlus = document.getElementById("vitalityButtonPlus")
 const vitalityButtonMinos = document.getElementById("vitalityButtonMinos")
 const vitalityButtonPlusPlus = document.getElementById("vitalityButtonPlusPlus")
+const vitalityVariation = document.getElementById("vitalityVariation")
+const vitalityJaugeTotal = document.getElementById("vitalityJaugeTotal")
+
 
 
 vitalityButtonPlus.addEventListener("click", getPlusVitality)
 function getPlusVitality(){
   vitality.value += 10
+  vitalityVariation.innerText = vitality.value
 }
 
 vitalityButtonMinos.addEventListener("click", getMinosVitality)
 function getMinosVitality() {
   vitality.value -= 10
+  vitalityVariation.innerText = vitality.value
 }
 
 vitalityButtonPlusPlus.addEventListener("click", getFullVitality)
 function getFullVitality() {
   vitality.value = vitalityTotal.max
+  vitalityVariation.innerText = vitality.value
+  vitalityJaugeTotal.innerText = vitalityTotal.max
 }
 
 // Les boutons d'énergie
@@ -490,20 +497,26 @@ function getFullVitality() {
 const energieButtonPlus = document.getElementById("energieButtonPlus")
 const energieButtonMinos = document.getElementById("energieButtonMinos")
 const energieButtonPlusPlus = document.getElementById("energieButtonPlusPlus")
+const energieVariation = document.getElementById("energieVariation")
+const energieTotal = document.getElementById("energieTotal")
 
 energieButtonPlus.addEventListener("click", getPlusEnergie)
 function getPlusEnergie(){
   energie.value += 10
+  energieVariation.innerText = energie.value
 }
 
 energieButtonMinos.addEventListener("click", getMinosEnergie)
 function getMinosEnergie() {
   energie.value -= 10
+  energieVariation.innerText = energie.value
 }
 
 energieButtonPlusPlus.addEventListener("click", getFullEnergie)
 function getFullEnergie() {
   energie.value = energieTotal.max
+  energieVariation.innerText = energie.value
+  energieJaugeTotal.innerText = energieTotal.max
 }
 
 // Les boutons de symbiose
@@ -512,34 +525,43 @@ const symbiosisButtonPlus = document.getElementById("symbiosisButtonPlus")
 const symbiosisButtonMinos = document.getElementById("symbiosisButtonMinos")
 const symbiosisButtonPlusPlus = document.getElementById("symbiosisButtonPlusPlus")
 const symbiosisTotal = document.getElementById("symbiosisTotal")
+const symbiosisVariation = document.getElementById("symbiosisVariation")
+const symbiosisJaugeTotal = document.getElementById("symbiosisJaugeTotal")
 
 symbiosisButtonPlus.addEventListener("click", getPlusSymbiosis)
 function getPlusSymbiosis(){
   symbiosis.value += 10
+  symbiosisVariation.innerText = symbiosis.value
 }
 
 symbiosisButtonMinos.addEventListener("click", getMinosSymbiosis)
 function getMinosSymbiosis() {
   symbiosis.value -= 10
+  symbiosisVariation.innerText = symbiosis.value
 }
 
 symbiosisButtonPlusPlus.addEventListener("click", getFullSymbiosis)
 function getFullSymbiosis() {
   symbiosis.value = symbiosisTotal.max
+  symbiosisVariation.innerText = symbiosis.value
+  symbiosisJaugeTotal.innerText = energieTotal.max
 }
 
 // Prise en compte des caractéristiques pour truc truc
-//Force + Endurance = DefMêlée
+
+//Agilité + Intuition = DefMêlée
   
   function updateDefMelee() {
-    DefMeleeValue = (parseInt(totalAgility.value) + parseInt(totalInstinct1.value)).innertext;
+    defMeleeValue = (parseInt(totalAgility.value) + parseInt(totalInstinct1.value)).innertext;
     localStorage.setItem("defMelee", defMelee.value);
   }
-//Agilité + Intuition = DefDistance
+//Rapidité + Reactivité = DefDistance
   function updateDefRange() {
     defRange.value = (parseInt(totalSpeed.value) + parseInt(totalReflex.value));
   }
 //Volonté + Charisme = Energie
+const energieJaugeTotal = document.getElementById("energieJaugeTotal")
+
   function updateEnergie() {
     energie.value = (parseInt(totalWill.value) + parseInt(totalCharisma.value)) * 10;
   }
