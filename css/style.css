@@ -32,12 +32,12 @@
 body {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     margin: 0;
     background-image: url(/img/parchemin.png);
-    /* height: 82vh; */
+    height: 100vh;
     background-position: center;
-    background-repeat: repeat-x;
+    background-repeat: repeat-y;
     background-size: cover;
 }
 html {

@@ -448,7 +448,7 @@ function getAnotherCarac(event) {
   vitality.max = (parseInt(document.getElementById("totalStrenght").value)+parseInt(document.getElementById("totalStamina").value))*10
   defMeleeValue.innerText = (parseInt(document.getElementById("totalAgility").value)+parseInt(document.getElementById("totalInstinct").value))
   defRangeValue.innerText = (parseInt(document.getElementById("totalSpeed").value)+parseInt(document.getElementById("totalReflex").value))
-  energie.value = (parseInt(document.getElementById("totalWill").value)+parseInt(document.getElementById("totalCharisma").value))*10
+  energie.max = (parseInt(document.getElementById("totalWill").value)+parseInt(document.getElementById("totalCharisma").value))*10
   detectionValue.innerText = (parseInt(document.getElementById("totalPerception").value)+parseInt(document.getElementById("totalStealth").value))
 
   
@@ -470,6 +470,7 @@ const vitalityButtonMinos = document.getElementById("vitalityButtonMinos")
 const vitalityButtonPlusPlus = document.getElementById("vitalityButtonPlusPlus")
 const vitalityVariation = document.getElementById("vitalityVariation")
 const vitalityJaugeTotal = document.getElementById("vitalityJaugeTotal")
+const vitalityTotal = document.getElementById("vitalityTotal")
 
 
 
@@ -499,6 +500,7 @@ const energieButtonMinos = document.getElementById("energieButtonMinos")
 const energieButtonPlusPlus = document.getElementById("energieButtonPlusPlus")
 const energieVariation = document.getElementById("energieVariation")
 const energieTotal = document.getElementById("energieTotal")
+const energieJaugeTotal = document.getElementById("energieJaugeTotal")
 
 energieButtonPlus.addEventListener("click", getPlusEnergie)
 function getPlusEnergie(){
@@ -514,9 +516,9 @@ function getMinosEnergie() {
 
 energieButtonPlusPlus.addEventListener("click", getFullEnergie)
 function getFullEnergie() {
-  energie.value = energieTotal.max
+  energie.value = energie.max
   energieVariation.innerText = energie.value
-  energieJaugeTotal.innerText = energieTotal.max
+  energieJaugeTotal.innerText = energie.max
 }
 
 // Les boutons de symbiose
@@ -560,7 +562,6 @@ function getFullSymbiosis() {
     defRange.value = (parseInt(totalSpeed.value) + parseInt(totalReflex.value));
   }
 //Volonté + Charisme = Energie
-const energieJaugeTotal = document.getElementById("energieJaugeTotal")
 
   function updateEnergie() {
     energie.value = (parseInt(totalWill.value) + parseInt(totalCharisma.value)) * 10;
@@ -623,3 +624,12 @@ const energieJaugeTotal = document.getElementById("energieJaugeTotal")
 function getTheTotalDice(event) {
     totalDice.value = parseInt(oneRoundedInput.value) + parseInt(twoRoundedInput.value) + parseInt(threeRoundedInput.value) + parseInt(fourRoundedInput.value)
   }
+
+
+
+
+
+  //----------------------------
+  //-----Les états
+  
+  
