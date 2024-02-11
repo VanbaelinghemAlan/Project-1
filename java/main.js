@@ -633,14 +633,22 @@ function getTheTotalDice(event) {
   //-----Les états je selectionne tous les IMG dans les effets
   const allEffect = document.getElementById("allEffect")
   const queryImg = allEffect.querySelectorAll("img")
+  const activeEffect = document.getElementById("activeEffect")
 
   queryImg.forEach(function(img){  
     img.addEventListener("click",getTheEffect)
      })
   
      //Je crée une fonction pour ajouter la classe active
-      function getTheEffect() {
-        this.classList.toggle("active")
-      }
-
+     function getTheEffect() {
+      this.classList.toggle("activeEffect");
       
+      if (this.classList.contains("activeEffect")) {
+        activeEffect.innerText = "Feu";
+      } else {
+        activeEffect.innerText = "";
+      }
+    }
+
+
+
