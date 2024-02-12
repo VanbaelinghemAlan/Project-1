@@ -198,6 +198,7 @@ const textTechPos = "Position technique : Vous pouvez effectuer une action techn
 //les valeurs sont temporaires
 //-------------------------------------------------------
 const caracNames = ["Strenght", "Stamina", "Agility", "Instinct", "Speed", "Reflex", "Perception", "Stealth", "Will", "Charisma"]; 
+const caracNamesFr = ["Force", "Endurace", "Agilité", "Intuition", "Rapidité", "Réactivité", "Perception", "Furtivité", "Volonté", "Charisme"];
 
 caracNames.forEach(name => {
   const baseInput = document.getElementById(`base${name}`);
@@ -226,7 +227,6 @@ caracNames.forEach(name => {
 queryCharacteristic.forEach(function(button){
     button.addEventListener("click",getTheDice)
     button.addEventListener("click",removeTheSameDice)
-    button.addEventListener("click",getTheEffect)
     button.addEventListener("click",setTheEffect)
     button.addEventListener("click",removeTheRounded)
     button.addEventListener("click",getTheTotalDice)
@@ -247,175 +247,29 @@ function getTheDice(event) {
     if (theLastDice === 0) thirdDice.value = ""
 
 //Affiche le nombre de dès en fonction de la caractéristique choisi
-    if (firstDice.value === "Force" && event.target.classList.contains("selected")){    
-      oneRoundedInput.value = baseStrenght.value}
-    if (firstDice.value === "Endurance" && event.target.classList.contains("selected")){
-      oneRoundedInput.value = baseStamina.value}
-    if (firstDice.value === "Agilité" && event.target.classList.contains("selected")){    
-      oneRoundedInput.value = baseAgility.value}
-    if (firstDice.value === "Intuition" && event.target.classList.contains("selected")){
-      oneRoundedInput.value = baseInstinct.value}
-    if (firstDice.value === "Rapidité" && event.target.classList.contains("selected")){    
-      oneRoundedInput.value = baseSpeed.value}
-    if (firstDice.value === "Réactivité" && event.target.classList.contains("selected")){
-      oneRoundedInput.value = baseReflex.value}
-    if (firstDice.value === "Perception" && event.target.classList.contains("selected")){    
-      oneRoundedInput.value = basePerception.value}
-    if (firstDice.value === "Furtivité" && event.target.classList.contains("selected")){
-      oneRoundedInput.value = baseStealth.value}
-    if (firstDice.value === "Volonté" && event.target.classList.contains("selected")){
-      oneRoundedInput.value = baseWill.value}
-    if (firstDice.value === "Charisme" && event.target.classList.contains("selected")){
-      oneRoundedInput.value = baseCharisma.value}
-
-      if (secondDice.value === "Force" && event.target.classList.contains("selected")){    
-        twoRoundedInput.value = baseStrenght.value}
-      if (secondDice.value === "Endurance" && event.target.classList.contains("selected")){
-        twoRoundedInput.value = baseStamina.value}
-      if (secondDice.value === "Agilité" && event.target.classList.contains("selected")){    
-        twoRoundedInput.value = baseAgility.value}
-      if (secondDice.value === "Intuition" && event.target.classList.contains("selected")){
-        twoRoundedInput.value = baseInstinct.value}
-      if (secondDice.value === "Rapidité" && event.target.classList.contains("selected")){    
-        twoRoundedInput.value = baseSpeed.value}
-      if (secondDice.value === "Réactivité" && event.target.classList.contains("selected")){
-        twoRoundedInput.value = baseReflex.value}
-      if (secondDice.value === "Perception" && event.target.classList.contains("selected")){    
-        twoRoundedInput.value = basePerception.value}
-      if (secondDice.value === "Furtivité" && event.target.classList.contains("selected")){
-        twoRoundedInput.value = baseStealth.value}
-      if (secondDice.value === "Volonté" && event.target.classList.contains("selected")){
-        twoRoundedInput.value = baseWill.value}            
-      if (secondDice.value === "Charisme" && event.target.classList.contains("selected")){
-        twoRoundedInput.value = baseCharisma.value}
-
-        if (thirdDice.value === "Force" && event.target.classList.contains("selected")){    
-          threeRoundedInput.value = baseStrenght.value}
-        if (thirdDice.value === "Endurance" && event.target.classList.contains("selected")){
-          threeRoundedInput.value = baseStamina.value}
-        if (thirdDice.value === "Agilité" && event.target.classList.contains("selected")){    
-          threeRoundedInput.value = baseAgility.value}
-        if (thirdDice.value === "Intuition" && event.target.classList.contains("selected")){
-          threeRoundedInput.value = baseInstinct.value}
-        if (thirdDice.value === "Rapidité" && event.target.classList.contains("selected")){    
-          threeRoundedInput.value = baseSpeed.value}
-        if (thirdDice.value === "Réactivité" && event.target.classList.contains("selected")){
-          threeRoundedInput.value = baseReflex.value}
-        if (thirdDice.value === "Perception" && event.target.classList.contains("selected")){    
-          threeRoundedInput.value = basePerception.value}
-        if (thirdDice.value === "Furtivité" && event.target.classList.contains("selected")){
-          threeRoundedInput.value = baseStealth.value}
-        if (thirdDice.value === "Volonté" && event.target.classList.contains("selected")){
-          threeRoundedInput.value = baseWill.value}            
-        if (thirdDice.value === "Charisme" && event.target.classList.contains("selected")){
-          threeRoundedInput.value = baseCharisma.value}
-  
-          if (fourthDice.value === "Force" && event.target.classList.contains("selected")){    
-            fourRoundedInput.value = baseStrenght.value}
-          if (fourthDice.value === "Endurance" && event.target.classList.contains("selected")){
-            fourRoundedInput.value = baseStamina.value}
-          if (fourthDice.value === "Agilité" && event.target.classList.contains("selected")){    
-            fourRoundedInput.value = baseAgility.value}
-          if (fourthDice.value === "Intuition" && event.target.classList.contains("selected")){
-            fourRoundedInput.value = baseInstinct.value}
-          if (fourthDice.value === "Rapidité" && event.target.classList.contains("selected")){    
-            fourRoundedInput.value = baseSpeed.value}
-          if (fourthDice.value === "Réactivité" && event.target.classList.contains("selected")){
-            fourRoundedInput.value = baseReflex.value}
-          if (fourthDice.value === "Perception" && event.target.classList.contains("selected")){    
-            fourRoundedInput.value = basePerception.value}
-          if (fourthDice.value === "Furtivité" && event.target.classList.contains("selected")){
-            fourRoundedInput.value = baseStealth.value}
-          if (fourthDice.value === "Volonté" && event.target.classList.contains("selected")){
-            fourRoundedInput.value = baseWill.value}            
-          if (fourthDice.value === "Charisme" && event.target.classList.contains("selected")){
-            fourRoundedInput.value = baseCharisma.value}
+   for(let i=0; i<caracNames.length; i++){
+    if (firstDice.value === caracNamesFr[i] && event.target.classList.contains(caracNames[i].toLowerCase())){
+      oneRoundedInput.value = event.target.nextElementSibling.value}
+    if (secondDice.value === caracNamesFr[i] && event.target.classList.contains(caracNames[i].toLowerCase())){
+      twoRoundedInput.value = event.target.nextElementSibling.value}    
+    if (thirdDice.value === caracNamesFr[i] && event.target.classList.contains(caracNames[i].toLowerCase())){
+      threeRoundedInput.value = event.target.nextElementSibling.value}
+    if (fourthDice.value === caracNamesFr[i] && event.target.classList.contains(caracNames[i].toLowerCase())){
+      fourRoundedInput.value = event.target.nextElementSibling.value}
+   }
     }      
 
 function getTheRounded(event){
-  if (firstDice.value === "Force" && event.target.classList.contains("selected")){  
-    mastery1.value = adStrenght.value}
-  if (firstDice.value === "Endurance" && event.target.classList.contains("selected")){
-    mastery1.value = adStamina.value}
-  if (firstDice.value === "Agilité" && event.target.classList.contains("selected")){    
-    mastery1.value = adAgility.value}
-  if (firstDice.value === "Intuition" && event.target.classList.contains("selected")){
-    mastery1.value = adInstinct.value}
-  if (firstDice.value === "Rapidité" && event.target.classList.contains("selected")){    
-    mastery1.value = adSpeed.value}
-  if (firstDice.value === "Réactivité" && event.target.classList.contains("selected")){
-    mastery1.value = adReflex.value}
-  if (firstDice.value === "Perception" && event.target.classList.contains("selected")){    
-    mastery1.value = adPerception.value}
-  if (firstDice.value === "Furtivité" && event.target.classList.contains("selected")){
-    mastery1.value = adStealth.value}
-  if (firstDice.value === "Volonté" && event.target.classList.contains("selected")){
-    mastery1.value = adWill.value}
-  if (firstDice.value === "Charisme" && event.target.classList.contains("selected")){
-    mastery1.value = adCharisma.value}
-
-    if (secondDice.value === "Force" && event.target.classList.contains("selected")){    
-      mastery2.value = adStrenght.value}
-    if (secondDice.value === "Endurance" && event.target.classList.contains("selected")){
-      mastery2.value = adStamina.value}
-    if (secondDice.value === "Agilité" && event.target.classList.contains("selected")){    
-      mastery2.value = adAgility.value}
-    if (secondDice.value === "Intuition" && event.target.classList.contains("selected")){
-      mastery2.value = adInstinct.value}
-    if (secondDice.value === "Rapidité" && event.target.classList.contains("selected")){    
-      mastery2.value = adSpeed.value}
-    if (secondDice.value === "Réactivité" && event.target.classList.contains("selected")){
-      mastery2.value = adReflex.value}
-    if (secondDice.value === "Perception" && event.target.classList.contains("selected")){    
-      mastery2.value = adPerception.value}
-    if (secondDice.value === "Furtivité" && event.target.classList.contains("selected")){
-      mastery2.value = adStealth.value}
-    if (secondDice.value === "Volonté" && event.target.classList.contains("selected")){
-      mastery2.value = adWill.value}            
-    if (secondDice.value === "Charisme" && event.target.classList.contains("selected")){
-      mastery2.value = adCharisma.value}
-
-      if (thirdDice.value === "Force" && event.target.classList.contains("selected")){    
-        mastery3.value = adStrenght.value}
-      if (thirdDice.value === "Endurance" && event.target.classList.contains("selected")){
-        mastery3.value = adStamina.value}
-      if (thirdDice.value === "Agilité" && event.target.classList.contains("selected")){    
-        mastery3.value = adAgility.value}
-      if (thirdDice.value === "Intuition" && event.target.classList.contains("selected")){
-        mastery3.value = adInstinct.value}
-      if (thirdDice.value === "Rapidité" && event.target.classList.contains("selected")){    
-        mastery3.value = adSpeed.value}
-      if (thirdDice.value === "Réactivité" && event.target.classList.contains("selected")){
-        mastery3.value = adReflex.value}
-      if (thirdDice.value === "Perception" && event.target.classList.contains("selected")){    
-        mastery3.value = adPerception.value}
-      if (thirdDice.value === "Furtivité" && event.target.classList.contains("selected")){
-        mastery3.value = adStealth.value}
-      if (thirdDice.value === "Volonté" && event.target.classList.contains("selected")){
-        mastery3.value = adWill.value}            
-      if (thirdDice.value === "Charisme" && event.target.classList.contains("selected")){
-        mastery3.value = adCharisma.value}
-
-        if (fourthDice.value === "Force" && event.target.classList.contains("selected")){    
-          mastery4.value = adStrenght.value}
-        if (fourthDice.value === "Endurance" && event.target.classList.contains("selected")){
-          mastery4.value = adStamina.value}
-        if (fourthDice.value === "Agilité" && event.target.classList.contains("selected")){    
-          mastery4.value = adAgility.value}
-        if (fourthDice.value === "Intuition" && event.target.classList.contains("selected")){
-          mastery4.value = adInstinct.value}
-        if (fourthDice.value === "Rapidité" && event.target.classList.contains("selected")){    
-          mastery4.value = adSpeed.value}
-        if (fourthDice.value === "Réactivité" && event.target.classList.contains("selected")){
-          mastery4.value = adReflex.value}
-        if (fourthDice.value === "Perception" && event.target.classList.contains("selected")){    
-          mastery4.value = adPerception.value}
-        if (fourthDice.value === "Furtivité" && event.target.classList.contains("selected")){
-          mastery4.value = adStealth.value}
-        if (fourthDice.value === "Volonté" && event.target.classList.contains("selected")){
-          mastery4.value = adWill.value}            
-        if (fourthDice.value === "Charisme" && event.target.classList.contains("selected")){
-          mastery4.value = adCharisma.value}
+    for(let i=0; i<caracNames.length; i++){
+      if (firstDice.value === caracNamesFr[i] && event.target.classList.contains("selected") && event.target.classList.contains(caracNames[i].toLowerCase())){
+    mastery1.value = event.target.nextElementSibling.nextElementSibling.value}
+      if (secondDice.value === caracNamesFr[i] && event.target.classList.contains("selected") && event.target.classList.contains(caracNames[i].toLowerCase())){
+      mastery2.value = event.target.nextElementSibling.nextElementSibling.value}
+      if (thirdDice.value === caracNamesFr[i] && event.target.classList.contains("selected") && event.target.classList.contains(caracNames[i].toLowerCase())){
+        mastery3.value = event.target.nextElementSibling.nextElementSibling.value}
+      if (fourthDice.value === caracNamesFr[i] && event.target.classList.contains("selected") && event.target.classList.contains(caracNames[i].toLowerCase())){
+          mastery4.value = event.target.nextElementSibling.nextElementSibling.value}
+      }
 }
 
 function removeTheSameDice(event) {
@@ -444,11 +298,11 @@ function getAnotherCarac(event) {
   thirdDice.classList.add("active")
   mastery3.classList.add("active")
   theLastDice ++
-  if (theLastDice  >= 2){
+  if (theLastDice  === 2){
     fourthDice.classList.add("active");
     mastery4.classList.add("active")
   }
-  if(theLastDice  >2) {
+  else if(theLastDice  >2) {
     theLastDice  = 2; 
     }
   }
@@ -469,10 +323,10 @@ function getAnotherCarac(event) {
   function getAnotherRounded(event) {
     threeRoundedInput.classList.add("active")
     theLastDice2 ++
-    if (theLastDice2  >= 2) {
+    if (theLastDice2  === 2) {
       fourRoundedInput.classList.add("active")
     }
-    if(theLastDice2  >2) {
+    else if(theLastDice2  >2) {
       theLastDice2  = 2 
     }
   }
@@ -502,22 +356,21 @@ function getAnotherCarac(event) {
   });
   //--------------------------
   
-  function getTheEffect(params) {
-    if (theLastDice ==0) effectDice.value = secondDice.value
-    if (theLastDice ==1) effectDice.value = thirdDice.value
-    if (theLastDice ==2) effectDice.value = fourthDice.value
-  }
-  function setTheEffect(getTheEffect){
-    if(effectDice.value === "Force") {effectDice.value = strenghtEffect}
-    if(effectDice.value === "Endurance") {effectDice.value = staminaEffect}
-    if(effectDice.value === "Agilité") {effectDice.value = agilityEffect}
-    if(effectDice.value === "Intuition") {effectDice.value = InstinctEffect}
-    if(effectDice.value === "Rapidité") {effectDice.value = speedEffect}
-    if(effectDice.value === "Réactivité") {effectDice.value = reflexEffect}
-    if(effectDice.value === "Perception") {effectDice.value = perceptionEffect}
-    if(effectDice.value === "Furtivité") {effectDice.value = stealthEffect}
-    if(effectDice.value === "Volonté") {effectDice.value = willEffect}
-    if(effectDice.value === "Charisme") {effectDice.value = charismaEffect} 
+  function setTheEffect(){
+    let effectDiceValue = "";
+    if (theLastDice ==0) effectDiceValue = secondDice.value
+    else if (theLastDice == 1) effectDiceValue = thirdDice.value
+    else if (theLastDice == 2) effectDiceValue = fourthDice.value
+    if(effectDiceValue === "Force") {effectDice.value = strenghtEffect}
+    else if(effectDiceValue === "Endurance") {effectDice.value = staminaEffect}
+    else if(effectDiceValue === "Agilité") {effectDice.value = agilityEffect}
+    else if(effectDiceValue === "Intuition") {effectDice.value = InstinctEffect}
+    else if(effectDiceValue === "Rapidité") {effectDice.value = speedEffect}
+    else if(effectDiceValue === "Réactivité") {effectDice.value = reflexEffect}
+    else if(effectDiceValue === "Perception") {effectDice.value = perceptionEffect}
+    else if(effectDiceValue === "Furtivité") {effectDice.value = stealthEffect}
+    else if(effectDiceValue === "Volonté") {effectDice.value = willEffect}
+    else if(effectDiceValue === "Charisme") {effectDice.value = charismaEffect} 
   }   
   
   //-------------------------------------------------------------------
@@ -664,18 +517,22 @@ function getFullSymbiosis() {
   
   
   function removeTheRounded(event) {
-    if (firstDice.value == "" && !event.target.classList.contains("selected"))
+    if (firstDice.value == "" && !event.target.classList.contains("selected")){
     oneRoundedInput.value = 0
     mastery1.value = 0
-    if (secondDice.value == "" && !event.target.classList.contains("selected"))
+  }
+    if (secondDice.value == "" && !event.target.classList.contains("selected")){
     twoRoundedInput.value = 0
     mastery2.value = 0
-    if (thirdDice.value == "" && !event.target.classList.contains("selected"))
+  }
+    if (thirdDice.value == "" && !event.target.classList.contains("selected")){
     threeRoundedInput.value = 0
-  mastery3.value = 0
-    if (fourthDice.value == "" && !event.target.classList.contains("selected"))
+    mastery3.value = 0
+}
+    if (fourthDice.value == "" && !event.target.classList.contains("selected")){
     fourRoundedInput.value = 0
   mastery4.value = 0
+}
   }
   
   //-----------------------------------------------------------
@@ -738,4 +595,8 @@ function getTheTotalDice(event) {
     }
   }
 
-  
+  // function changeTextIntoButton() {
+  //   if(activeEffect.text === effects.text)
+
+  // }
+
