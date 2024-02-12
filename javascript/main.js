@@ -1,3 +1,85 @@
+
+const effects ={
+  "burn":{
+  "text":"Brûlure X", 
+  "Description" : "Vous prenez X dégâts. Les dégâts doubles à chaque round. Le joueur peut éteindre les flammes au prix d'une action complexe, ou par les effets d'eau et de glace"
+  },
+  "wet":{
+    "text":"Mouiller", 
+    "Description" : "Vous êtes vulnérable aux effets 'électrocuter', 'Givre' et 'Gel'"
+    },
+  "soaked":{
+    "text":"Tremper", 
+    "Description" : "Vous êtes vulnérable aux effets 'électrocuter', 'Givre' et 'Gel'"
+    },
+    "frosted":{
+      "text":"Givrer", 
+      "Description" : "La cible est recouverte d'une couche épaisse de glace. La cible peut tenter avec un jet de Force de se sortir d'elle-même. Sans aide, la cible obtiendra le statut 'Gel'"
+      },
+    "frozen":{
+      "text":"Geler", 
+      "Description" : ""
+      },
+    "electrocute":{
+      "text":"", 
+      "Description" : ""
+      },
+    "bleeding":{
+      "text":"", 
+      "Description" : ""
+      },  
+      "":{
+        "text":"", 
+        "Description" : ""
+        },
+      "":{
+        "text":"", 
+        "Description" : ""
+        },
+      "":{
+        "text":"", 
+        "Description" : ""
+        },
+      "":{
+        "text":"", 
+        "Description" : ""
+        },   
+        "":{
+          "text":"", 
+          "Description" : ""
+          },
+        "":{
+          "text":"", 
+          "Description" : ""
+          },
+        "":{
+          "text":"", 
+          "Description" : ""
+          },
+        "":{
+          "text":"", 
+          "Description" : ""
+          },  
+            "":{
+      "text":"", 
+      "Description" : ""
+      },
+    "":{
+      "text":"", 
+      "Description" : ""
+      },
+    "":{
+      "text":"", 
+      "Description" : ""
+      },
+    "":{
+      "text":"", 
+      "Description" : ""
+      },         
+  }
+
+
+console.log(effects.burn.text)
 const attributeTotal = document.getElementsByClassName("attTt")
 
 const characteristic = document.getElementById("characteristic")
@@ -635,20 +717,25 @@ function getTheTotalDice(event) {
   const queryImg = allEffect.querySelectorAll("img")
   const activeEffect = document.getElementById("activeEffect")
 
-  queryImg.forEach(function(img){  
-    img.addEventListener("click",getTheEffect)
-     })
+  queryImg.forEach(function(img) {
+    img.addEventListener("click", getTheEffect);
+  });
   
-     //Je crée une fonction pour ajouter la classe active
-     function getTheEffect() {
-      this.classList.toggle("activeEffect");
-      
-      if (this.classList.contains("activeEffect")) {
-        activeEffect.innerText = "Feu";
-      } else {
-        activeEffect.innerText = "";
+  function getTheEffect() {
+    this.classList.toggle("activeEffect");
+    getTheRightName.call(this); // Appeler la fonction getTheRightName en utilisant la référence à l'image cliquée
+  }
+  
+  function getTheRightName() {
+    if (this.classList.contains("activeEffect")) {
+      const effectName = this.id;
+  
+      if (effects[effectName]) {
+        activeEffect.innerText += effects[effectName].text;
       }
+    } else {
+      activeEffect.innerText = "";
     }
+  }
 
-
-
+  
