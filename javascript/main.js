@@ -1,28 +1,28 @@
 
 const effects ={
   "burn":{
-  "text":"Brûlure X", 
+  "text":" Brûlure X", 
   "Description" : "Vous prenez X dégâts. Les dégâts doubles à chaque round. Le joueur peut éteindre les flammes au prix d'une action complexe, ou par les effets d'eau et de glace"
   },
   "wet":{
-    "text":"Mouiller", 
+    "text":" Mouiller", 
     "Description" : "Vous êtes vulnérable aux effets 'électrocuter', 'Givre' et 'Gel'"
     },
   "soaked":{
-    "text":"Tremper", 
+    "text":" Tremper", 
     "Description" : "Vous êtes vulnérable aux effets 'électrocuter', 'Givre' et 'Gel'"
     },
     "frosted":{
-      "text":"Givrer", 
-      "Description" : "La cible est recouverte d'une couche épaisse de glace. La cible peut tenter avec un jet de Force de se sortir d'elle-même. Sans aide, la cible obtiendra le statut 'Gel'"
+      "text":" Givrer", 
+      "Description" : "Vous êtes recouvert d'une couche épaisse de glace. A votre tour, vous pouvez tenter avec un jet de Force de briser la glace. Après deux tours, la cible obtiendra le statut 'Gel'. Les alliés peuvent aider à briser la glace."
       },
     "frozen":{
-      "text":"Geler", 
-      "Description" : ""
+      "text":" Geler", 
+      "Description" : "Vous êtes entièrement gelée, vous ne pouvez rien faire. Si vous restez dans cet état durant 2 tours, vous mourrez."
       },
     "electrocute":{
-      "text":"", 
-      "Description" : ""
+      "text":" Electrocuter", 
+      "Description" : "Vous êtes électrocuté, les cibles à moins 1m de vous partage les X dégâts et vous devez effectuer un test d'endurance X. En cas d'échec la cible perd une action de déplacement ou d'action (au choix). En cas de réussite vous aggissez normalement durant votre tour"
       },
     "bleeding":{
       "text":"", 

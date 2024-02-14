@@ -499,3 +499,8 @@ body.template-dark {
     filter: saturate(3);
     transform: scale(1.2, 1.2)
 }
+
+span.lookEffect {
+    color: red;
+    
+}
