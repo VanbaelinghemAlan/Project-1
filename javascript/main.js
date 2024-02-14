@@ -570,29 +570,30 @@ function getTheTotalDice(event) {
 
   //----------------------------
   //-----Les états je selectionne tous les IMG dans les effets
-  const allEffect = document.getElementById("allEffect")
-  const queryImg = allEffect.querySelectorAll("img")
-  const activeEffect = document.getElementById("activeEffect")
-
+  const allEffect = document.getElementById("allEffect");
+  const queryImg = allEffect.querySelectorAll("img");
+  const activeEffect = document.getElementById("activeEffect");
+  
   queryImg.forEach(function(img) {
     img.addEventListener("click", getTheEffect);
   });
   
   function getTheEffect() {
     this.classList.toggle("activeEffect");
-    getTheRightName.call(this); // Appeler la fonction getTheRightName en utilisant la référence à l'image cliquée
+    getTheRightName.call(this);
   }
   
   function getTheRightName() {
-    if (this.classList.contains("activeEffect")) {
-      const effectName = this.id;
+    activeEffect.innerText = ""; // Réinitialiser le texte
   
-      if (effects[effectName]) {
-        activeEffect.innerText += effects[effectName].text;
+    queryImg.forEach(function(img) {
+      if (img.classList.contains("activeEffect")) {
+        const effectName = img.id;
+        if (effects[effectName]) {
+          activeEffect.innerText += effects[effectName].text + " ";
+        }
       }
-    } else {
-      activeEffect.innerText = "";
-    }
+    });
   }
 
   // function changeTextIntoButton() {
